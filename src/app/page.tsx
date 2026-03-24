@@ -4,8 +4,8 @@ import { categories } from "@/lib/categories";
 
 const popularArticles = [
   { href: "/starta-foretag/enskild-firma-vs-aktiebolag", title: "Enskild firma vs Aktiebolag – Vilken bolagsform passar dig?" },
-  { href: "/bokforing-ekonomi/bokforing-for-nyborjare", title: "Bokföring för nybörjare – komplett guide" },
-  { href: "/skatt/skatt-aktiebolag", title: "Skatt för aktiebolag – komplett guide" },
+  { href: "/bokforing-ekonomi/bokforing-enskild-firma", title: "Bokföring för enskild firma – komplett guide" },
+  { href: "/skatt/skatteplanering-aktiebolag", title: "Skatteplanering aktiebolag – laglig optimering" },
   { href: "/marknadsforing/seo-guide", title: "SEO för småföretag – komplett guide" },
   { href: "/finansiering/bidrag-stod", title: "Bidrag och stöd för företagare" },
   { href: "/juridik/avtal-guide", title: "Avtal för företagare – komplett guide" },
