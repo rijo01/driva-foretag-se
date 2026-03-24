@@ -22,9 +22,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl font-bold text-brand font-heading">
-              Driva Företag
-            </span>
+            <img
+              src="/logo.svg"
+              alt="Driva Företag"
+              width={180}
+              height={32}
+              className="h-8 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
