@@ -12,6 +12,42 @@ export interface ArticleFrontmatter {
   publishedAt: string;
   updatedAt?: string;
   author?: string;
+  readTime?: string;
+  tags?: string[];
+}
+
+export interface TocItem {
+  id: string;
+  text: string;
+}
+
+export function extractToc(content: string): TocItem[] {
+  const headingRegex = /^## (.+)$/gm;
+  const items: TocItem[] = [];
+  let match;
+  while ((match = headingRegex.exec(content)) !== null) {
+    const text = match[1].replace(/\*\*/g, "").replace(/[`*_~]/g, "").trim();
+    const id = text
+      .toLowerCase()
+      .replace(/[åä]/g, "a")
+      .replace(/ö/g, "o")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+    items.push({ id, text });
+  }
+  return items;
+}
+
+export function getAdjacentArticles(
+  category: string,
+  slug: string
+): { prev: ArticleData | null; next: ArticleData | null } {
+  const articles = getArticlesByCategory(category);
+  const index = articles.findIndex((a) => a.slug === slug);
+  return {
+    prev: index > 0 ? articles[index - 1] : null,
+    next: index < articles.length - 1 ? articles[index + 1] : null,
+  };
 }
 
 export interface ArticleData {
