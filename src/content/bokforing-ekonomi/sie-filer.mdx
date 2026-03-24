@@ -1,0 +1,194 @@
+---
+title: "SIE-filer – vad är det och hur fungerar de?"
+description: "Guide till SIE-filer. Exportera bokföringsdata mellan program, till revisorn eller Skatteverket."
+category: "bokforing-ekonomi"
+type: "cluster"
+publishedAt: "2026-03-24"
+updatedAt: "2026-03-24"
+author: "Driva Företag-redaktionen"
+readTime: "5 min"
+tags: ["SIE-filer", "bokföring", "bokföringsprogram"]
+---
+
+## Introduktion
+
+SIE-filer är det svenska standardformatet för att överföra bokföringsdata mellan olika system. Oavsett om du byter bokföringsprogram, skickar filer till din revisor eller behöver exportera data till Skatteverket är SIE-formatet nyckeln. Den här guiden förklarar vad SIE-filer är, vilka typer som finns och hur du använder dem i praktiken.
+
+## Vad är en SIE-fil?
+
+SIE står för **Standard Import Export** och är ett filformat utvecklat specifikt för svensk bokföring. Formatet skapades av SIE-gruppen (en del av branschorganisationen FAR) på 1990-talet och har sedan dess blivit den gemensamma standarden för att flytta bokföringsdata mellan olika program och system.
+
+En SIE-fil är en textfil med filändelsen **.se** (eller ibland **.si**) som innehåller bokföringsuppgifter i ett standardiserat format. Filen kan innehålla allt från kontoplaner och saldon till enskilda verifikationer.
+
+### Varför finns SIE-formatet?
+
+Utan ett standardformat skulle varje bokföringsprogram ha sitt eget proprietära format. Det skulle innebära att:
+
+- Du inte kunde byta bokföringsprogram utan att mata in allt manuellt
+- Revisorer behövde tillgång till exakt samma program som kunden
+- Export till myndigheter skulle kräva specialanpassningar för varje program
+
+SIE löser alla dessa problem genom att erbjuda ett gemensamt språk som alla svenska bokföringsprogram förstår.
+
+## Typer av SIE-filer
+
+Det finns fyra typer av SIE-filer, numrerade SIE1 till SIE4. De vanligaste är SIE4 och SIE1.
+
+### SIE1 – Årssaldon
+
+Innehåller kontoplanen och årssaldon (ingående och utgående balans) för ett eller flera räkenskapsår. Användbart för att överföra grunddata och kontrollera saldon.
+
+### SIE2 – Periodsaldon
+
+Innehåller samma som SIE1 plus periodsaldon (per månad). Ger en mer detaljerad bild av hur saldona har utvecklats under året.
+
+### SIE3 – Objektsaldon
+
+Innehåller samma som SIE2 plus saldon per objekt (kostnadsställen, projekt). Används av företag som har mer avancerad redovisning med objektsuppföljning.
+
+### SIE4 – Transaktioner (verifikationer)
+
+Den mest kompletta typen. Innehåller alla verifikationer med enskilda transaktioner – det vill säga hela bokföringen. SIE4 är den fil du behöver för att flytta bokföring mellan program eller för att revisorn ska kunna granska alla transaktioner.
+
+| Typ | Innehåll | Vanligaste användning |
+|---|---|---|
+| SIE1 | Kontplan + årssaldon | Grunddata, byte av program (enbart saldon) |
+| SIE2 | SIE1 + periodsaldon | Månadsvis uppföljning |
+| SIE3 | SIE2 + objektsaldon | Kostnadsställen och projekt |
+| SIE4 | Alla verifikationer | Komplett bokföringsöverföring, revision |
+
+## Vanliga användningsområden
+
+### Byta bokföringsprogram
+
+Det vanligaste skälet att använda SIE-filer är byte av [bokföringsprogram](/bokforing-ekonomi/basta-bokforingsprogram). Processen ser typiskt ut så här:
+
+1. Exportera en SIE4-fil från ditt gamla program
+2. Importera SIE4-filen i det nya programmet
+3. Kontrollera att alla verifikationer, saldon och kontoplanen har följt med korrekt
+
+De flesta program – Fortnox, Bokio, Visma eEkonomi, SpeedLedger – stödjer export och import av SIE4. Kontrollera dock att det nya programmet stödjer den SIE-typ du exporterar.
+
+### Skicka till revisorn
+
+Revisorer behöver ofta tillgång till hela bokföringen för sin granskning. Istället för att ge dem inloggning till ditt bokföringsprogram kan du exportera en SIE4-fil. Revisorn importerar den i sitt eget granskningsverktyg (ofta Caseware eller liknande) och kan analysera bokföringen effektivt.
+
+### Skicka till redovisningskonsult
+
+Om du anlitar en [redovisningskonsult](/hitta-radgivare) kan SIE-filer vara ett smidigt sätt att utbyta data. Konsulten kan importera din SIE-fil, granska den och eventuellt skicka tillbaka en korrigerad version.
+
+### Export till Skatteverket
+
+Vid revision eller förfrågan från Skatteverket kan du behöva lämna ut din bokföring. En SIE4-fil innehåller all nödvändig information i ett format som Skatteverket kan läsa och analysera.
+
+### Ekonomisk analys
+
+Vissa analysverktyg kan importera SIE-filer för att producera nyckeltal, branschjämförelser och trendanalyser. Det kan vara värdefullt för att förstå företagets [resultatrapport](/bokforing-ekonomi/resultatrapport) och [balansrapport](/bokforing-ekonomi/balansrapport) i ett bredare perspektiv.
+
+## Så exporterar du en SIE-fil
+
+Processen varierar mellan program men följer generellt samma mönster:
+
+### Steg för steg
+
+1. **Logga in** i ditt bokföringsprogram
+2. **Navigera** till inställningar, export eller rapporter (platsen varierar)
+3. **Välj SIE-export** och den typ av SIE-fil du vill skapa (vanligtvis SIE4)
+4. **Ange period** – välj det räkenskapsår eller den period du vill exportera
+5. **Exportera** – filen laddas ner till din dator
+6. **Spara** filen på en säker plats
+
+### Exempel i vanliga program
+
+**Fortnox:** Gå till Inställningar > Import/Export > SIE-export. Välj SIE4 och ange period.
+
+**Bokio:** Gå till Inställningar > Exportera data > SIE-fil. Välj typ och period.
+
+**Visma eEkonomi:** Gå till Inställningar > Import och export > Exportera SIE-fil.
+
+## Så importerar du en SIE-fil
+
+Import av SIE-filer görs typiskt vid uppstart av ett nytt bokföringsprogram eller vid byte:
+
+1. **Logga in** i det mottagande programmet
+2. **Navigera** till importfunktionen
+3. **Välj SIE-filen** från din dator
+4. **Granska** – programmet visar ofta en sammanfattning av vad som kommer importeras
+5. **Bekräfta** importen
+6. **Kontrollera** – stäm av saldon och kontoplanen mot det gamla programmet
+
+### Kontrollera efter import
+
+Verifiera alltid efter import:
+
+- **Ingående balans** – stämmer den med utgående balans i det gamla programmet?
+- **Kontoplanen** – har alla konton följt med? Kontrollera att [BAS-kontoplanen](/bokforing-ekonomi/bas-kontoplanen) stämmer
+- **Antal verifikationer** – stämmer antalet med det gamla programmet?
+- **Momssaldon** – kontrollera att momsredovisningen ser korrekt ut
+
+## SIE-filens tekniska format
+
+SIE-filen är en ren textfil som följer en specifik syntax. Varje rad börjar med ett nyckelord (tagg) som anger vad raden innehåller. Här är ett förenklat exempel:
+
+```
+#FLAGGA 0
+#PROGRAM "BokföringsProgrammet" 5.0
+#FORMAT PC8
+#GEN 20251231
+#SIETYP 4
+#ORGNR 5591234567
+#FNAMN "Mitt Företag AB"
+#KONTO 1930 "Företagskonto"
+#KONTO 3010 "Försäljning varor"
+#VER A 1 20250115 "Försäljning"
+{
+  #TRANS 1930 {} 12500.00
+  #TRANS 3010 {} -10000.00
+  #TRANS 2610 {} -2500.00
+}
+```
+
+Du behöver normalt inte redigera SIE-filer manuellt – programmet hanterar allt. Men det kan vara bra att förstå formatet om du behöver felsöka en import som inte fungerar.
+
+## Säkerhet och hantering
+
+### Känslig information
+
+SIE-filer innehåller hela din bokföring – det är känsliga företagsuppgifter. Hantera dem med samma omsorg som annan ekonomisk dokumentation:
+
+- Skicka inte SIE-filer via okrypterad e-post
+- Använd säker fildelning eller krypterade tjänster
+- Ta bort SIE-filer du inte längre behöver
+- Lagra SIE-filer i enlighet med **bokföringslagens** arkiveringskrav (7 år)
+
+### Arkivering
+
+Enligt bokföringslagen ska räkenskapsinformation sparas i sju år. SIE-filer räknas som räkenskapsinformation och ska arkiveras på ett betryggande sätt. En bra praxis är att exportera en SIE4-fil vid varje bokslut och spara den som del av din digitala arkivering.
+
+## Vanliga frågor
+
+### Kan alla bokföringsprogram läsa SIE-filer?
+
+Ja, alla etablerade svenska bokföringsprogram stödjer SIE-formatet. Det är en branschstandard sedan 1990-talet. Om ett program inte stödjer SIE bör du vara skeptisk till det programmet.
+
+### Vilken SIE-typ ska jag använda?
+
+I de flesta fall SIE4, eftersom den innehåller all information inklusive verifikationer. Använd SIE1 eller SIE2 om mottagaren bara behöver saldon (exempelvis för en snabb ekonomisk analys).
+
+### Kan SIE-filer innehålla bilder av kvitton?
+
+Nej, SIE-formatet hanterar enbart bokföringsdata i textformat. Kvitton och underlag måste hanteras separat. Många moderna bokföringsprogram har egna lösningar för digital arkivering av kvitton.
+
+### Vad gör jag om importen misslyckas?
+
+Kontrollera att SIE-filen inte är skadad (öppna den i en textredigerare och verifiera att den ser rimlig ut). Kontrollera att du importerar rätt SIE-typ. Kontakta supporten för ditt bokföringsprogram om problemet kvarstår – de har ofta erfarenhet av importproblem.
+
+### Är SIE-formatet unikt för Sverige?
+
+Ja, SIE är en svensk standard. I andra länder finns andra format, exempelvis XBRL som används internationellt. Men för svensk bokföring är SIE det dominerande formatet.
+
+## Sammanfattning
+
+SIE-filer är den svenska standarden för att flytta bokföringsdata mellan system. SIE4 är den mest kompletta typen och innehåller alla verifikationer. Formatet gör det enkelt att byta bokföringsprogram, samarbeta med revisorer och exportera data till Skatteverket.
+
+Funderar du på att byta bokföringsprogram? Jämför alternativen i vår guide till [bästa bokföringsprogrammen](/bokforing-ekonomi/basta-bokforingsprogram) och använd våra [verktyg](/verktyg) för att hitta rätt program. Behöver du hjälp med bytet? [Hitta en redovisningskonsult](/hitta-radgivare) som kan säkerställa att övergången går smidigt.

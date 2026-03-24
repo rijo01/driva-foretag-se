@@ -1,0 +1,258 @@
+---
+title: "Zapier och Make – automatisera utan kod"
+description: "Jämför Zapier och Make för företagsautomatisering. Priser, funktioner och praktiska flödesexempel."
+category: "ai-effektivisering"
+type: "cluster"
+publishedAt: "2026-03-24"
+updatedAt: "2026-03-24"
+author: "Driva Företag-redaktionen"
+readTime: "9 min"
+tags: ["Zapier", "Make", "automatisering", "no-code"]
+---
+
+## Introduktion
+
+Zapier och Make (tidigare Integromat) är de två ledande plattformarna för att automatisera arbetsflöden utan att skriva en enda rad kod. Båda verktygen låter dig koppla ihop appar, trigga automatiska åtgärder och bygga komplexa flöden som sparar timmar varje vecka. Men de skiljer sig åt i pris, funktionalitet och användarvänlighet. I den här guiden jämför vi verktygen rakt av och ger dig tio praktiska flödesexempel som du kan sätta upp redan idag.
+
+## Vad är Zapier och Make?
+
+Zapier och Make tillhör kategorin iPaaS (integration Platform as a Service) – plattformar som kopplar ihop olika webbtjänster och automatiserar arbetsflöden mellan dem. Grundprincipen är enkel: när något händer i en app (en trigger) utförs automatiskt en eller flera åtgärder i andra appar.
+
+### Zapier i korthet
+
+Zapier grundades 2011 och är den mest använda automationsplattformen globalt med stöd för över 7 000 appar. Plattformen är känd för sin enkelhet – du bygger "Zaps" (arbetsflöden) genom att välja trigger och åtgärder i ett steg-för-steg-gränssnitt. Zapier fokuserar på att vara lätt att komma igång med, även om du aldrig har automatiserat något förut.
+
+### Make i korthet
+
+Make (tidigare Integromat) erbjuder ett visuellt drag-och-släpp-gränssnitt där du bygger arbetsflöden som flödesscheman. Med stöd för över 2 000 appar och betydligt kraftfullare funktioner för komplexa flöden är Make ett populärt val för företag som behöver mer avancerade automatiseringar. Make ger dig mer kontroll över dataflödet, villkorslogik och felhantering.
+
+## Zapier vs Make – detaljerad jämförelse
+
+Att välja mellan Zapier och Make beror på dina specifika behov. Här jämför vi de viktigaste aspekterna.
+
+### Användarvänlighet
+
+**Zapier** har ett linjärt gränssnitt där du bygger flöden steg för steg. Varje Zap har en trigger och en eller flera åtgärder som utförs i sekvens. Det är intuitivt och kräver minimal inlärning. Nackdelen är att det kan kännas begränsande när du vill bygga mer komplexa flöden med villkor och parallella vägar.
+
+**Make** använder ett visuellt kanvas där du drar moduler och kopplar ihop dem med linjer. Det ger en tydligare överblick över komplexa flöden och gör det enklare att bygga förgreningar, loopar och felhantering. Inlärningskurvan är dock brantare – det tar längre tid att bli bekväm med gränssnittet.
+
+**Vinnare:** Zapier för nybörjare. Make för avancerade användare.
+
+### Priser 2026
+
+| Plan | Zapier | Make |
+|---|---|---|
+| Gratis | 100 uppgifter/mån, 5 Zaps | 1 000 operationer/mån, 2 scenarier |
+| Starter | 29,99 USD/mån (750 uppgifter) | 10,59 USD/mån (10 000 operationer) |
+| Professional | 73,50 USD/mån (2 000 uppgifter) | 18,82 USD/mån (10 000 operationer) |
+| Team | 103,50 USD/mån (2 000 uppgifter) | 34,12 USD/mån (10 000 operationer) |
+
+En viktig skillnad är hur verktygen räknar användning. Zapier räknar varje åtgärd i ett flöde som en "task". Ett flöde med en trigger och tre åtgärder förbrukar alltså tre tasks varje gång det körs. Make räknar varje steg som en "operation", men erbjuder betydligt fler operationer per prisplan. I praktiken innebär det att Make ofta är avsevärt billigare vid hög volym.
+
+**Vinnare:** Make – ofta 50 till 75 procent billigare vid jämförbar användning.
+
+### Funktioner och flexibilitet
+
+**Zapier** erbjuder:
+- Stöd för över 7 000 appar (flest i branschen)
+- AI-assisterad skapande av Zaps
+- Inbyggda dataformat- och filterverktyg
+- Zapier Tables (enkel databas)
+- Zapier Interfaces (enkla formulär och dashboards)
+
+**Make** erbjuder:
+- Visuella flödesscheman med drag-och-släpp
+- Avancerad villkorslogik med routrar och iteratorer
+- Inbyggt felhanteringssystem med retry-funktionalitet
+- HTTP/Webhook-moduler för integration med valfri API
+- Datalagring och JSON-manipulation
+- Mer detaljerad kontroll över dataflödet i varje steg
+
+**Vinnare:** Make för flexibilitet och komplexa flöden. Zapier för app-bredd och enkelhet.
+
+### Svenska integrationer
+
+Båda plattformarna stödjer populära svenska verktyg, men utbudet skiljer sig.
+
+**Fortnox:** Tillgänglig i både Zapier och Make via officiella och tredjepartsintegrationer. I Make finns en dedikerad Fortnox-modul med stöd för fakturor, kunder, artiklar och bokföringsordrar. Zapier erbjuder Fortnox-integration via partners.
+
+**BankID:** Direkt BankID-integration saknas i båda plattformarna. Dock kan du använda webhook-baserade lösningar i kombination med tredjepartstjänster som Criipto eller Freja eID för att integrera verifiering i dina flöden.
+
+**Visma:** Tillgänglig i både Zapier och Make med stöd för de vanligaste funktionerna.
+
+**Övriga svenska tjänster:** Tjänster som Billogram, Trustly och Klarna har begränsat stöd men kan ofta integreras via HTTP-moduler och API-nycklar.
+
+## 10 praktiska flödesexempel för svenska småföretag
+
+Här är tio konkreta automatiseringar som du kan bygga i antingen Zapier eller Make. Varje exempel sparar tid och minskar risken för manuella fel. Om du vill förstå mer om [hur automatisering fungerar och var det ger mest effekt](/ai-effektivisering/automatisera-foretag) har vi en separat guide.
+
+### 1. Ny kund i CRM till välkomstmejl
+
+**Trigger:** Ny kontakt skapas i HubSpot, Pipedrive eller Fortnox CRM
+**Åtgärd:** Skicka ett personligt välkomstmejl via Gmail, Mailchimp eller Brevo med kundens namn och relevant information
+**Tidsvinst:** 5–10 minuter per ny kund
+
+### 2. Formulärsvar till CRM och Slack
+
+**Trigger:** Nytt formulärsvar på webbplatsen (Typeform, Google Forms eller Tally)
+**Åtgärder:** Skapa kontakt i CRM, meddela säljteamet i Slack, lägg till i Google Sheets för uppföljning
+**Tidsvinst:** 10–15 minuter per formulärsvar
+
+### 3. Automatisk fakturapåminnelse
+
+**Trigger:** Förfallodatum passerat i Fortnox (kontrolleras dagligen)
+**Åtgärder:** Skicka påminnelsemejl till kund, meddela ansvarig säljare i Slack, uppdatera status i projektverktyget
+**Tidsvinst:** 20–30 minuter per vecka
+
+### 4. Social media-publicering från kalkylblad
+
+**Trigger:** Ny rad i Google Sheets med inläggsinnehåll och publiceringsdatum
+**Åtgärd:** Publicera automatiskt på LinkedIn, Facebook och Instagram via Buffer eller Hootsuite
+**Tidsvinst:** 1–2 timmar per vecka
+
+### 5. Offert till uppföljningssekvens
+
+**Trigger:** Offert skickad i Fortnox
+**Åtgärder:** Starta en uppföljningssekvens – påminnelse efter 3 dagar, uppföljningsmejl efter 7 dagar, Slack-notis till säljare efter 14 dagar om offerten inte accepterats
+**Tidsvinst:** 15 minuter per offert
+
+### 6. Ny anställd – onboarding-automatisering
+
+**Trigger:** Ny post i HR-systemet eller Google Sheets
+**Åtgärder:** Skapa konto i Google Workspace, bjud in till relevanta Slack-kanaler, skicka välkomstdokumentation via mejl, skapa uppgifter i Asana eller Trello
+**Tidsvinst:** 1–2 timmar per nyanställd
+
+### 7. Kvittoskanning till bokföring
+
+**Trigger:** Nytt foto i en specifik Google Drive- eller Dropbox-mapp
+**Åtgärder:** Skicka till OCR-tjänst för tolkning, skapa transaktion i Fortnox med tolkat belopp och leverantör, arkivera i rätt mapp
+**Tidsvinst:** 3–5 minuter per kvitto
+
+### 8. Kundrecensioner till samlingsdokument
+
+**Trigger:** Ny Google-recension eller Trustpilot-omdöme
+**Åtgärder:** Spara i Google Sheets, meddela teamet i Slack, vid negativ recension (under 3 stjärnor) skapa uppgift i projektverktyget för uppföljning
+**Tidsvinst:** 10 minuter per recension
+
+### 9. E-handelsorder till leverans och uppföljning
+
+**Trigger:** Ny order i WooCommerce eller Shopify
+**Åtgärder:** Skapa fraktsedel i Postnord eller Budbee, uppdatera lagersaldo i Google Sheets, skicka orderbekräftelse, schemalägg uppföljningsmejl efter 14 dagar
+**Tidsvinst:** 10–15 minuter per order
+
+### 10. Mötesbokning till förberedelse
+
+**Trigger:** Nytt möte bokat via Calendly eller Cal.com
+**Åtgärder:** Skapa mötesdokument i Google Docs från mall, skicka påminnelse med agenda till deltagare, lägg till förberedande uppgift i din uppgiftshanterare
+**Tidsvinst:** 5–10 minuter per möte
+
+## Steg-för-steg: bygg ditt första flöde
+
+Oavsett om du väljer Zapier eller Make är processen för att komma igång snarlik.
+
+### I Zapier
+
+1. **Skapa konto** på zapier.com och logga in
+2. **Klicka på "Create Zap"** i dashboarden
+3. **Välj trigger-app** – till exempel Google Forms – och koppla ditt konto
+4. **Konfigurera triggern** – välj vilket formulär som ska trigga flödet
+5. **Testa triggern** – Zapier hämtar exempeldata från din app
+6. **Lägg till åtgärd** – välj destination-app, till exempel Google Sheets
+7. **Mappa fälten** – koppla formulärfält till kolumner i kalkylbladet
+8. **Testa och aktivera** – kör ett test och slå på din Zap
+
+### I Make
+
+1. **Skapa konto** på make.com och logga in
+2. **Skapa ett nytt scenario** från dashboarden
+3. **Lägg till trigger-modul** – klicka på plustecknet och välj app
+4. **Koppla ditt konto** och konfigurera vilken händelse som ska trigga flödet
+5. **Lägg till åtgärdsmoduler** – dra in fler moduler och koppla dem med linjer
+6. **Konfigurera dataflödet** – mappa fält mellan moduler genom att klicka på varje steg
+7. **Lägg till villkor vid behov** – använd en router-modul för att skapa förgreningar
+8. **Kör scenario** – testa med testdata och aktivera schemat
+
+### Felhantering – viktigt att tänka på
+
+En av de vanligaste fallgroparna med automatisering är att inte planera för fel. Appar kan vara nere, API-anrop kan misslyckas och data kan vara i oväntat format.
+
+**I Zapier** kan du aktivera "Auto Replay" som försöker köra misslyckade steg igen automatiskt. Du får också mejlnotiser vid fel.
+
+**I Make** finns ett mer sofistikerat felhanteringssystem. Du kan lägga till dedikerade felhanteringsmoduler som fångar upp fel och utför alternativa åtgärder – exempelvis att skicka en Slack-notis till dig om ett steg misslyckas eller att spara transaktionen i en kö för manuell hantering.
+
+Oavsett verktyg bör du alltid övervaka dina automationer regelbundet den första månaden och bygga in notifieringar för misslyckade körningar.
+
+## Så väljer du rätt verktyg
+
+Valet mellan Zapier och Make beror på tre faktorer: budget, komplexitet och teknisk komfort.
+
+### Välj Zapier om du:
+
+- Vill komma igång snabbt med minimal inlärning
+- Behöver integration med en specifik nisch-app (Zapiers app-katalog är störst)
+- Bygger främst enkla, linjära flöden (trigger plus en till tre åtgärder)
+- Värderar enkelhet och bra dokumentation framför avancerade funktioner
+- Har budget för premiumplaner vid högre volymer
+
+### Välj Make om du:
+
+- Behöver komplexa flöden med villkor, loopar och felhantering
+- Har högre volymer och vill hålla kostnaderna nere
+- Vill ha fullständig kontroll över datamanipulation och API-anrop
+- Är bekväm med en något brantare inlärningskurva
+- Behöver bygga flöden med parallella vägar och avancerad logik
+
+### Går det att använda båda?
+
+Absolut. Många företag börjar med Zapier för enkla automatiseringar och lägger till Make när behoven växer. Du kan till och med koppla ihop verktygen via webhooks om du vill att ett Zapier-flöde ska trigga ett Make-scenario eller vice versa.
+
+Om du är nyfiken på fler [AI-verktyg som kan effektivisera ditt företag](/ai-effektivisering/basta-ai-verktyg) har vi en komplett lista.
+
+## Avancerade tips
+
+När du har de grundläggande flödena på plats finns det flera sätt att ta dina automationer till nästa nivå.
+
+### Multi-steg-flöden med AI
+
+Både Zapier och Make erbjuder AI-steg i sina flöden. Du kan till exempel:
+- Använda ChatGPT i ett steg för att sammanfatta ett långt kundmejl innan det skickas till Slack
+- Kategorisera inkommande supportärenden automatiskt med AI innan de tilldelas rätt person
+- Generera personaliserade svar på kundrecensioner baserat på innehållet
+
+Vill du lära dig mer om hur [ChatGPT kan användas i ditt företag](/ai-effektivisering/chatgpt-foretag) har vi en separat guide.
+
+### Variabler och datalagring
+
+Make erbjuder inbyggd datalagring (Data Stores) som fungerar som en enkel databas. Det gör det möjligt att lagra och hämta data mellan olika körningar – exempelvis för att hålla koll på vilka kunder som redan fått en viss typ av mejl.
+
+### Schemaläggning och volymer
+
+I Make kan du schemalägga scenarier att köra med specifika intervall, från var femte minut till en gång per dag. Zapier kör automatiskt vid varje trigger-händelse men uppdateringsintervallet beror på din prisplan – från var femtonde minut till realtid.
+
+## Vanliga frågor
+
+### Behöver jag kunna programmera för att använda Zapier eller Make?
+
+Nej, ingen programmering krävs. Båda verktygen är byggda för att användas utan kodkunskap. Grundläggande förståelse för hur appar fungerar och logiskt tänkande räcker för att komma igång. Viss teknisk förståelse hjälper dock när du bygger mer komplexa flöden – särskilt i Make.
+
+### Kan Zapier och Make integrera med Fortnox?
+
+Ja, båda plattformarna har Fortnox-integrationer. Make erbjuder en dedikerad Fortnox-modul med stöd för de vanligaste funktionerna som fakturor, kunder och bokföringsordrar. Zapier har Fortnox-stöd via partners. I båda fallen kan du dessutom använda Fortnox API direkt via HTTP-moduler för funktioner som saknar färdig integration.
+
+### Hur mycket tid kan jag spara med automatisering?
+
+Det beror på din verksamhet, men de flesta småföretagare sparar mellan 5 och 15 timmar per vecka med rätt automatiseringar på plats. Även enkla flöden som automatisk mejlkoppling, formulärhantering och notifieringar sparar märkbar tid. Se vår guide om [att automatisera ditt företag](/ai-effektivisering/automatisera-foretag) för en komplett genomgång.
+
+### Är det säkert att låta automatisering hantera kunddata?
+
+Både Zapier och Make följer GDPR och erbjuder kryptering av data i transit och i vila. Zapier är SOC 2-certifierat och Make har ISO 27001-certifiering. Det viktiga är att du själv följer GDPR i hur du samlar in och använder kunddata – automationsverktyget i sig är en databehandlare och inte personuppgiftsansvarig.
+
+### Vad händer om en automatisering går fel?
+
+Både Zapier och Make skickar notifieringar vid misslyckade körningar. Zapier erbjuder automatisk retry och en logg över alla körningar. Make har ett mer avancerat felhanteringssystem med möjlighet att bygga in reservflöden för specifika feltyper. Se till att aktivera notifieringar och kontrollera loggarna regelbundet.
+
+## Nästa steg
+
+Automatisering med Zapier och Make är ett av de snabbaste sätten att frigöra tid i ditt företag utan att anställa fler medarbetare. Börja med ett enda flöde som löser en konkret irritationsmoment i din vardag och bygg sedan vidare därifrån.
+
+Behöver du hjälp att komma igång med automatisering? [Hitta en rådgivare](/hitta-radgivare) som kan hjälpa dig att identifiera de bästa automationsmöjligheterna i just din verksamhet, eller utforska fler [verktyg för företagare](/verktyg).
