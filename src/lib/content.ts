@@ -14,6 +14,7 @@ export interface ArticleFrontmatter {
   author?: string;
   readTime?: string;
   tags?: string[];
+  reviewedBy?: string;
 }
 
 export interface TocItem {
