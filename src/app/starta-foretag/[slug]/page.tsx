@@ -3,11 +3,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { marked } from "marked";
 import { getArticle, getArticlesByCategory } from "@/lib/content";
 
 const CATEGORY = "starta-foretag";
 const BASE_URL = "https://driva-foretag.se";
+
+marked.setOptions({ gfm: true, breaks: false });
 
 export function generateStaticParams() {
   const dir = path.join(process.cwd(), "src/content", CATEGORY);
@@ -41,40 +43,6 @@ export async function generateMetadata({
   };
 }
 
-const mdxComponents = {
-  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="text-4xl font-bold mt-10 mb-6 text-slate-900" {...props} />
-  ),
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 border-b border-slate-200 pb-2" {...props} />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-2xl font-semibold mt-8 mb-3 text-slate-900" {...props} />
-  ),
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-lg leading-relaxed text-slate-700 my-4" {...props} />
-  ),
-  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc pl-6 my-4 space-y-2 text-lg text-slate-700" {...props} />
-  ),
-  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal pl-6 my-4 space-y-2 text-lg text-slate-700" {...props} />
-  ),
-  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="leading-relaxed" {...props} />
-  ),
-  strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold text-slate-900" {...props} />
-  ),
-  a: ({ href = "", ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <Link
-      href={href}
-      className="text-blue-600 underline hover:text-blue-800"
-      {...props}
-    />
-  ),
-};
-
 export default async function BranschGuide({
   params,
 }: {
@@ -83,6 +51,8 @@ export default async function BranschGuide({
   const { slug } = await params;
   const article = getArticle(CATEGORY, slug);
   if (!article) notFound();
+
+  const html = await marked.parse(article.content);
 
   const related = getArticlesByCategory(CATEGORY)
     .filter((a) => a.slug !== slug)
@@ -141,9 +111,10 @@ export default async function BranschGuide({
             </div>
           </header>
 
-          <div className="prose prose-lg max-w-none">
-            <MDXRemote source={article.content} components={mdxComponents} />
-          </div>
+          <div
+            className="prose-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
 
           {related.length > 0 && (
             <aside className="mt-16 pt-10 border-t border-slate-200">
