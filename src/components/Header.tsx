@@ -36,7 +36,7 @@ export default function Header() {
               <Link
                 key={cat.href}
                 href={cat.href}
-                className="px-3 py-2 text-sm text-gray-700 hover:text-brand hover:bg-surface rounded-md transition-colors"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-brand hover:bg-surface rounded-md transition-colors whitespace-nowrap"
               >
                 <span className="mr-1">{cat.emoji}</span>
                 {cat.label}
