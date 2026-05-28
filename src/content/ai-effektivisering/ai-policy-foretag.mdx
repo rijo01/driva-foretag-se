@@ -1,0 +1,213 @@
+---
+title: "AI-policy för företag – mall och guide för ansvarsfullt AI-bruk"
+description: "Skapa en intern AI-policy som skyddar ditt företag. Mall, checklista, GDPR-koppling och EU:s AI-förordning förklarad för svenska företagare."
+category: "ai-effektivisering"
+type: "cluster"
+publishedAt: "2026-05-28"
+updatedAt: "2026-05-28"
+author: "Johan Wikström"
+readTime: "10 min"
+tags: ["AI-policy", "AI-regler företag", "ChatGPT företag", "GDPR AI", "EU AI Act", "AI-säkerhet", "intern AI-styrning", "ansvarsfull AI"]
+reviewedBy: "Digital marknadsförare"
+---
+
+## Introduktion
+
+Dina medarbetare använder sannolikt redan AI-verktyg i sitt dagliga arbete. ChatGPT, Copilot, Gemini och liknande tjänster har blivit vardagsverktyg för att skriva, sammanfatta, analysera och koda – ofta utan att ledningen är medveten om det eller har satt upp några spelregler.
+
+Det är ett problem. Utan en intern AI-policy riskerar företaget att känslig information läcker ut, att personuppgifter behandlas på ett sätt som strider mot GDPR, att felaktiga AI-genererade utdata tas för sanning, och att företaget inte uppfyller sina skyldigheter enligt EU:s AI-förordning.
+
+Den här guiden förklarar vad en AI-policy ska innehålla, vilka risker du behöver hantera och hur du tar fram en mall som passar ditt företag – oavsett om ni är fem eller femtio anställda.
+
+## Varför din verksamhet behöver en AI-policy nu
+
+En AI-policy är inte ett dokument för storföretag med juridikavdelning. Det är ett praktiskt styrverktyg som tydliggör för alla medarbetare vad som är tillåtet, vad som är förbjudet och vem som bär ansvaret.
+
+### Risken med oreglerat AI-bruk
+
+Tänk dig att en anställd klistrar in ett kundkontrakt i ChatGPT för att få hjälp med en formulering. Eller att en säljare laddar upp en kunddatabas i ett AI-verktyg för att skapa personaliserade mejl. I bägge fallen kan personuppgifter och konfidentiell affärsinformation skickas till en extern server och i vissa fall användas för att träna AI-modeller.
+
+Konkreta risker att hantera:
+
+- **Läckage av företagshemligheter** – affärsplaner, strategidokument, offerter och kunddata.
+- **GDPR-brott** – personuppgifter som behandlas av en tredjepartstjänst utan rättslig grund eller databehandlingsavtal.
+- **Felaktiga utdata** – AI kan "hallucinera" och presentera felaktiga fakta med stor självförtroende. Utan granskningsrutin kan det leda till felaktiga beslut, juridiska misstag eller skadad kundrelation.
+- **Upphovsrättsfrågor** – AI-genererat material kan i enstaka fall likna upphovsrättsskyddat innehåll.
+- **Partiskhet och diskriminering** – AI-modeller kan förstärka strukturella skevheter, exempelvis i rekryteringsprocesser.
+
+### Det handlar om förtroende
+
+En tydlig AI-policy signalerar till medarbetare, kunder och samarbetspartners att ni tar ansvar för hur tekniken används. I en tid när AI-relaterade incidenter och dataskandaler uppmärksammas allt mer är det en konkurrensfördel att kunna visa upp ett genomtänkt ramverk.
+
+## Vad GDPR kräver när du använder AI
+
+GDPR gäller fullt ut när personuppgifter behandlas i samband med AI-verktyg. Det spelar ingen roll om behandlingen sker via ett SaaS-verktyg, en lokal installation eller en API-integration – om personuppgifter hanteras gäller dataskyddsförordningen.
+
+Viktiga aspekter att ha i policyn:
+
+**Rättslig grund.** Varje behandling av personuppgifter kräver en rättslig grund: avtal, rättslig förpliktelse, berättigat intresse eller samtycke. AI-driven profilering av kunder utan tydlig grund är ett vanligt problem.
+
+**Databehandlingsavtal (DPA).** Om ett AI-verktyg behandlar personuppgifter på uppdrag av ditt företag, räknas leverantören som personuppgiftsbiträde. Ni måste ha ett skriftligt databehandlingsavtal på plats. Kontrollera alltid om AI-tjänstens användarvillkor inkluderar ett DPA – och om det uppfyller GDPR:s krav.
+
+**Tredjelandsöverföring.** Många AI-tjänster lagrar och processar data i USA eller andra länder utanför EU/EES. En sådan överföring kräver en giltig mekanism, exempelvis EU:s standardavtalsklausuler (SCC).
+
+**Automatiserade beslut.** GDPR artikel 22 ger individer rätt att inte bli föremål för enbart automatiserade beslut som har rättslig eller liknande verkan. Om ditt företag använder AI i exempelvis kreditbedömning eller rekrytering måste ni säkerställa att mänsklig granskning ingår.
+
+Läs mer om ditt företags GDPR-skyldigheter i vår guide om [GDPR för företag](/juridik/gdpr-foretag).
+
+## EU:s AI-förordning – vad gäller för ditt företag?
+
+EU:s AI-förordning, förordning (EU) 2024/1689 (AI Act), är världens första övergripande reglering av artificiell intelligens. Den trädde i kraft den 1 augusti 2024 och fasas in gradvis:
+
+| Datum | Vad gäller |
+|---|---|
+| **2 februari 2025** | Förbud mot oacceptabla AI-system träder i kraft (t.ex. AI för social poängsättning, viss biometrisk identifiering) |
+| **2 augusti 2025** | Krav på leverantörer av allmänna AI-modeller (GPAI), inklusive ChatGPT/GPT-4-klassen |
+| **2 augusti 2026** | Huvudregler för högrisk-AI, krav på konsekvensanalys, EU-databas och sanktionsmekanismer |
+| **2 augusti 2027** | Högrisk-AI inbyggd i reglerade produkter (medicintekniska produkter, leksaker m.m.) |
+
+*Källa: EUR-Lex, förordning (EU) 2024/1689; Vinge advokater; Digg. Verifierat 2026-05-28.*
+
+### Vad innebär det för dig som är företagare?
+
+De flesta småföretag är **användare** (kallas "deployers" i förordningen) snarare än utvecklare av AI-system. Som användare är dina skyldigheter lättare än utvecklarnas – men de finns.
+
+**Om du använder AI-system i högrisk-kategorier** (t.ex. AI i HR-processer, kreditbedömning, kritisk infrastruktur) gäller striktare krav från och med 2 augusti 2026: konsekvensanalys, transparens mot berörda personer och i vissa fall registrering i EU:s AI-databas.
+
+**Om du enbart använder standard-kontorsverktyg** (ChatGPT för textutkast, Copilot i Word, AI-summering av möten) är kraven lättare – men förbudslistan och GDPR gäller alltid.
+
+**Förbudet mot oacceptabla AI-system** (gäller sedan 2 februari 2025) innebär bland annat att det är förbjudet att använda AI-system som manipulerar människors beteende på ett sätt de inte är medvetna om, eller som skapar sociala rankningssystem baserade på beteende.
+
+Ta del av vår fördjupningsartikel om [AI-juridik för företag](/ai-effektivisering/ai-juridik) för en mer detaljerad genomgång av regelverket.
+
+## Vad en intern AI-policy bör innehålla
+
+En genomtänkt AI-policy behöver inte vara lång. Den ska vara möjlig att läsa och förstå för en medarbetare på tio minuter. Här är de delar som bör finnas med:
+
+### Syfte och scope
+
+Beskriv varför policyn finns och vem den gäller: alla anställda, konsulter, inhyrd personal. Specificera vilka typer av AI-verktyg som täcks: generativa AI-tjänster, AI-funktioner i befintliga plattformar (Microsoft 365 Copilot, Google Workspace), automatiseringsverktyg med AI-inslag.
+
+### Godkända och icke godkända verktyg
+
+Lista vilka AI-verktyg som är **godkända för bruk** i verksamheten. För att ett verktyg ska godkännas bör ni ha granskat:
+- Att databehandlingsavtal (DPA) finns på plats.
+- Att personuppgifter inte används för träning av modellen utan samtycke.
+- Att datalagring sker inom EU/EES, eller att det finns en giltig överföringsmekanism.
+
+Specificera också vilka plattformar som är **icke godkända** tills vidare, och förklara kortfattat varför.
+
+### Vad som aldrig får matas in
+
+Det här är kärnan i policyn. Var tydlig och exemplifiera:
+
+**Aldrig mata in:**
+- Personuppgifter om kunder, anställda eller prospekts (namn, personnummer, kontaktuppgifter, hälsodata)
+- Konfidentiell affärsinformation: offerter, prislistor, affärsplaner, M&A-information
+- Inloggningsuppgifter, API-nycklar, lösenord
+- Juridiska dokument och avtal under förhandling
+- Finansiell information som inte är offentlig
+
+**Tillåtet att mata in:**
+- Anonymiserad eller fiktiv information
+- Offentlig information som redan är tillgänglig
+- Generella frågor om processen, inte specifika kundfall
+
+### Granskning av AI-genererade utdata
+
+Alla AI-genererade texter, analyser, siffror och rekommendationer ska granskas av en människa innan de används i affärssammanhang. Definiera vad "granskning" innebär för olika typer av utdata:
+
+- **Texter:** Faktakontroll av påståenden, justering av ton och stil.
+- **Juridiska och finansiella utdata:** Granskning av relevant sakkunnig innan beslut fattas.
+- **Kod:** Code review som om den vore skriven av en junior utvecklare.
+
+### Ansvar
+
+Tydliggör vem som ansvarar för vad:
+
+- **Varje medarbetare** ansvarar för att följa policyn och inte mata in förbjudet material.
+- **Närmaste chef** ansvarar för att policyn efterlevs i teamet.
+- **IT/dataskyddsansvarig** ansvarar för att godkänna nya AI-verktyg och uppdatera listan.
+- **Ledningen** ansvarar för att policyn hålls aktuell och för att resurser finns för utbildning.
+
+### Utbildning
+
+Beskriv hur medarbetare introduceras till policyn (onboarding) och hur kontinuerlig utbildning sker. AI-verktyg och regelverk förändras snabbt – sätt en rutin för att uppdatera policyn och informera teamet minst en gång per år.
+
+## Checklista: skapa er AI-policy
+
+Använd den här checklistan som en startpunkt:
+
+- [ ] Kartlägg alla AI-verktyg som används i organisationen idag, inklusive verktyg som anställda använder på eget initiativ
+- [ ] Granska varje verktyg ur ett GDPR-perspektiv (DPA, tredjelandsöverföring, träningsdata)
+- [ ] Definiera kategorier av information som aldrig får delas med AI-tjänster
+- [ ] Lista godkända och icke godkända verktyg
+- [ ] Skriv ned rutiner för mänsklig granskning av AI-utdata
+- [ ] Identifiera om ni använder AI i högrisk-kategorier (HR, kreditbeslut, säkerhet) och planera för AI Act-krav inför 2026
+- [ ] Utse ansvarig person för AI-styrning
+- [ ] Kommunicera policyn till alla medarbetare
+- [ ] Boka in en revidering om sex månader – regler och verktyg förändras snabbt
+
+## Exempel: AI-policy för ett litet konsultföretag
+
+**Nexum Consulting AB** är ett managementkonsultbolag med tolv anställda. De arbetar med känslig affärsinformation för sina kunder dagligen och identifierade tidigt ett behov av tydliga regler.
+
+**Godkända verktyg:** Microsoft 365 Copilot (DPA via Microsoft Enterprise Agreement), Grammarly Business (DPA på plats, EU-lagring aktiverat).
+
+**Ej godkända:** Gratisversioner av ChatGPT, Google Gemini (utan DPA), och alla AI-verktyg som inte granskats av IT-chefen.
+
+**Förbjuden information:** All kundinformation, offerter, strategidokument och personuppgifter om kunder eller anställda.
+
+**Granskningsrutin:** All AI-genererad text som ska gå till kund granskas av ansvarig konsult. Inga AI-genererade siffror eller juridiska formuleringar används utan verifiering.
+
+**Utbildning:** Ny medarbetare genomgår 30-minuters genomgång av policyn under onboarding. Uppdatering skickas via mejl när policyn ändras.
+
+Det tog Nexum ungefär en halvdag att ta fram sin första policy – och tre timmar att revidera den sex månader senare.
+
+## Vanliga frågor
+
+### Gäller AI-förordningen för alla företag i Sverige?
+
+Ja, EU:s AI-förordning (2024/1689) gäller för alla som placerar AI-system på den europeiska marknaden eller använder sådana system för att driftsätta dem mot användare i EU – oavsett om företaget är baserat i EU eller utanför. Det innebär att svenska företag som använder AI-tjänster i sin verksamhet omfattas av de delar av förordningen som riktar sig till "deployers" (användare av AI). Grundförbuden gäller sedan 2 februari 2025.
+
+### Måste vi ha ett DPA med ChatGPT?
+
+Om ni använder ChatGPT i en affärsmiljö och matar in personuppgifter, ja. OpenAI erbjuder ett DPA via sina affärsplaner (ChatGPT Team och Enterprise). Gratisversionen av ChatGPT inkluderar inget DPA och är inte lämplig för behandling av personuppgifter eller konfidentiell information.
+
+### Kan vi använda AI i rekrytering?
+
+Ja, men med försiktighet. AI-stöd i rekrytering – exempelvis för att sortera CV:n eller ranka kandidater – klassas som högrisk-AI enligt AI-förordningen. Det innebär bland annat krav på transparens mot kandidater, mänsklig granskning av beslut och (från 2026) mer formella krav på konsekvensanalys. Se till att AI-verktyget inte diskriminerar på grund av kön, etnicitet eller ålder.
+
+### Vad händer om en anställd bryter mot AI-policyn?
+
+Det beror på er interna disciplinpolicy och hur allvarlig incidenten är. En oavsiktlig miss vid ett enstaka tillfälle hanteras bäst med utbildning och förtydligande. En allvarlig incident – till exempel att känsliga kunddata skickats till ett icke godkänt system – kan kräva incidentrapportering enligt GDPR och kan få konsekvenser i anställningsförhållandet. Ha ett rapporteringsflöde på plats så att incidenter inte sopas under mattan.
+
+### Hur ofta ska AI-policyn uppdateras?
+
+Minst en gång per år, men helst var sjätte månad. AI-området rör sig snabbt: verktyg förändras, EU-riktlinjer preciseras och er verksamhets AI-användning kommer att växa. Sätt en fast kalenderbokning för revidering.
+
+## Sammanfattning
+
+AI-verktyg skapar verklig affärsnytta – men de medför också risker som behöver hanteras aktivt. En intern AI-policy är inte ett hinder för att använda tekniken; det är en förutsättning för att använda den ansvarsfullt och hållbart.
+
+De viktigaste punkterna att ta med sig:
+
+- Kartlägg vilka AI-verktyg som redan används i er organisation.
+- Definiera tydligt vad som aldrig får matas in i externa AI-tjänster.
+- Säkerställ att ni har GDPR-kompatibla databehandlingsavtal med alla AI-leverantörer som hanterar personuppgifter.
+- Identifiera om ni använder AI i högrisk-sammanhang och planera för EU AI Act-kraven.
+- Uppdatera policyn regelbundet – regler och verktyg förändras snabbt.
+
+Att skriva er första AI-policy behöver inte ta mer än en halv dag. Det är en av de bästa investeringarna ni kan göra för att skydda ert företag och era kunder.
+
+Vill du ha hjälp att ta fram en AI-policy anpassad för din verksamhet? [Hitta en rådgivare med AI-juridisk kompetens](/hitta-radgivare) som kan guida er genom processen.
+
+För en bredare introduktion till hur AI kan effektivisera er verksamhet, läs vår [AI-guide för företagare](/ai-effektivisering/ai-guide-foretagare) och vår genomgång av [ChatGPT för företag](/ai-effektivisering/chatgpt-foretag).
+
+## Källor och referenser
+
+- Europaparlamentets och rådets förordning (EU) 2024/1689 om artificiell intelligens (AI Act): [EUR-Lex](https://eur-lex.europa.eu/legal-content/SV/ALL/?uri=CELEX:32024R1689) – verifierat 2026-05-28.
+- Vinge Advokatbyrå – "Vad du behöver veta om AI-förordningen" (tillämpningsdatum 2 februari 2025): [vinge.se](https://www.vinge.se/insights/industri-4-0/ai-forordningen-vad-du-behover-veta-nar-vissa-bestammelser-borjade-galla-den-2-februari-2025/) – verifierat 2026-05-28.
+- Digg – AI-förordningen, nationell vägledning för svenska aktörer: [digg.se](https://www.digg.se/kunskap-och-stod/eu-rattsakter/ai-forordningen) – verifierat 2026-05-28.
+- IMY (Integritetsskyddsmyndigheten) – AI-förordningen och GDPR: [imy.se](https://www.imy.se/verksamhet/ai/ai-forordningen/) – verifierat 2026-05-28.
+- Fondia – "Sveriges anpassningar till AI-förordningen": [fondia.com](https://fondia.com/se/sv/aktuellt/artiklar/sveriges-anpassningar-till-ai-forordningen-ai-act-sa-paverkas-foretag-av-de-nya-reglerna/) – verifierat 2026-05-28.
