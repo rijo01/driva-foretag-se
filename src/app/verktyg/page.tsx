@@ -14,7 +14,7 @@ const kalkylatorer: {
   emoji: string;
   href?: string;
 }[] = [
-  { title: "Lönekalkylator", description: "Beräkna bruttolön, nettolön, arbetsgivaravgifter och skatt.", emoji: "💵" },
+  { title: "Lönekalkylator", description: "Beräkna bruttolön, nettolön, arbetsgivaravgifter och skatt.", emoji: "💵", href: "/verktyg/lonekalkylator" },
   { title: "Momskalkylator", description: "Räkna ut moms (25%, 12%, 6%) på belopp snabbt.", emoji: "🧮", href: "/verktyg/momskalkylator" },
   { title: "Vinstkalkylator", description: "Beräkna förväntad vinst och vinstmarginal.", emoji: "📈", href: "/verktyg/vinstkalkylator" },
   { title: "Break-even-kalkylator", description: "Beräkna vid vilken omsättning du går plus.", emoji: "⚖️" },
