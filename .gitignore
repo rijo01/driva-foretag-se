@@ -50,6 +50,14 @@ content/guides-pdf/*.pdf
 !content/guides-pdf/webbyra.pdf
 !content/guides-pdf/dropshipping.pdf
 !content/guides-pdf/redovisningsbyra.pdf
+!content/guides-pdf/cafe.pdf
+!content/guides-pdf/frisorsalong.pdf
+!content/guides-pdf/fastighetsbolag.pdf
+!content/guides-pdf/skonhetssalong.pdf
+!content/guides-pdf/personlig-tranare.pdf
+!content/guides-pdf/tradgard.pdf
+!content/guides-pdf/fotograf.pdf
+!content/guides-pdf/event.pdf
 
 # vercel
 .vercel
