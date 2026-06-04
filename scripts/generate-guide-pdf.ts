@@ -59,6 +59,56 @@ function sanitize(text: string): string {
     .replace(/ /g, " ");
 }
 
+// ── Helvetica AFM-bredder (Core-14, WinAnsi) ────────────────────────────────
+// jsPDF 4.2.1:s doc.getTextWidth() UNDERSKATTAR Helveticas verkliga advance med
+// ~2 % (t.ex. "Transportstyrelsen" @10,5pt: getTextWidth 85,16 pt vs verklig
+// 86,94 pt). Standard-14-fonterna bäddar inte in någon /Widths-array, så
+// visaren använder sina inbyggda AFM-mått – och det är DEM vi måste matcha när
+// vi flyttar x-markören manuellt, annars driver mellanslagen längd-proportionellt.
+// Värdena nedan är Adobes kanoniska Helvetica/Helvetica-Bold-bredder (1/1000 em).
+// Oblique-varianterna delar bredder med sina upprätta motsvarigheter.
+const AFM_HELV: Record<string, number> = {
+  " ": 278, "!": 278, '"': 355, "#": 556, $: 556, "%": 889, "&": 667, "'": 191,
+  "(": 333, ")": 333, "*": 389, "+": 584, ",": 278, "-": 333, ".": 278, "/": 278,
+  "0": 556, "1": 556, "2": 556, "3": 556, "4": 556, "5": 556, "6": 556, "7": 556,
+  "8": 556, "9": 556, ":": 278, ";": 278, "<": 584, "=": 584, ">": 584, "?": 556,
+  "@": 1015, A: 667, B: 667, C: 722, D: 722, E: 667, F: 611, G: 778, H: 722,
+  I: 278, J: 500, K: 667, L: 556, M: 833, N: 722, O: 778, P: 667, Q: 778, R: 722,
+  S: 667, T: 611, U: 722, V: 667, W: 944, X: 667, Y: 667, Z: 611, "[": 278,
+  "\\": 278, "]": 278, "^": 469, _: 556, "`": 333, a: 556, b: 556, c: 500,
+  d: 556, e: 556, f: 278, g: 556, h: 556, i: 222, j: 222, k: 500, l: 222,
+  m: 833, n: 556, o: 556, p: 556, q: 556, r: 333, s: 500, t: 278, u: 556,
+  v: 500, w: 722, x: 500, y: 500, z: 500, "{": 334, "|": 260, "}": 334,
+  "~": 584, "§": 556, "°": 400, "·": 278, é: 556, å: 556, ä: 556,
+  ö: 556, ü: 556, á: 556, à: 556, è: 556, ê: 556, ô: 556, ç: 500, Å: 667,
+  Ä: 667, Ö: 778, É: 667, Ü: 722,
+};
+const AFM_HELVB: Record<string, number> = {
+  " ": 278, "!": 333, '"': 474, "#": 556, $: 556, "%": 889, "&": 722, "'": 238,
+  "(": 333, ")": 333, "*": 389, "+": 584, ",": 278, "-": 333, ".": 278, "/": 278,
+  "0": 556, "1": 556, "2": 556, "3": 556, "4": 556, "5": 556, "6": 556, "7": 556,
+  "8": 556, "9": 556, ":": 333, ";": 333, "<": 584, "=": 584, ">": 584, "?": 611,
+  "@": 975, A: 722, B: 722, C: 722, D: 722, E: 667, F: 611, G: 778, H: 722,
+  I: 278, J: 556, K: 722, L: 611, M: 833, N: 722, O: 778, P: 667, Q: 778, R: 722,
+  S: 667, T: 611, U: 722, V: 667, W: 944, X: 667, Y: 667, Z: 611, "[": 333,
+  "\\": 278, "]": 333, "^": 584, _: 556, "`": 333, a: 556, b: 611, c: 556,
+  d: 611, e: 556, f: 333, g: 611, h: 611, i: 278, j: 278, k: 556, l: 278,
+  m: 889, n: 611, o: 611, p: 611, q: 611, r: 389, s: 556, t: 333, u: 611,
+  v: 556, w: 778, x: 556, y: 556, z: 500, "{": 389, "|": 280, "}": 389,
+  "~": 584, "§": 556, "°": 400, "·": 278, é: 556, å: 556, ä: 556,
+  ö: 611, ü: 611, á: 556, à: 556, è: 556, ê: 556, ô: 611, ç: 556, Å: 722,
+  Ä: 722, Ö: 778, É: 667, Ü: 722,
+};
+
+// Verklig renderad advance (pt) för en sträng i given vikt/storlek – matchar
+// visarens utritning (till skillnad från doc.getTextWidth i jsPDF 4.2.1).
+function afmWidth(str: string, bold: boolean, fontSize: number): number {
+  const tbl = bold ? AFM_HELVB : AFM_HELV;
+  let units = 0;
+  for (const ch of str) units += tbl[ch] ?? 556;
+  return (units / 1000) * fontSize;
+}
+
 // Tokeniserar text till ord, där **fetstil** styr vikten. Varje token vet om
 // det föregicks av blanksteg i källtexten (`spaceBefore`). Det är avgörande:
 // ett **fet**-segment direkt följt av skiljetecken (t.ex. "**arbetskostnaden**,")
@@ -182,9 +232,14 @@ class GuidePDF {
     return lines;
   }
 
-  // Ritar en rad i viktgrupper med RIKTIGA mellanslagstecken (inte bara
-  // positionsförskjutning), så att kopiering och textextrahering ur PDF:en
-  // får korrekta ordmellanrum.
+  // Ritar en rad. Strategi: rita varje sammanhängande
+  // körning (run) av ord med SAMMA vikt i ETT doc.text-anrop – då lägger
+  // jsPDF/visaren själv ut bokstäver OCH interna mellanslag med korrekta
+  // typsnittsmått, så ingen drift uppstår inom en run (det var där de smala
+  // mellanslagen efter långa ord satt). x-markören flyttas manuellt ENDAST vid
+  // viktbyte, och då med Helvetica AFM-bredd (= visarens egna mått) i stället
+  // för doc.getTextWidth, som i jsPDF 4.2.1 underskattar advance ~2 % och annars
+  // skulle ge samma längd-proportionella drift vid varje stilgräns.
   drawLine(
     line: Word[],
     x: number,
@@ -200,16 +255,24 @@ class GuidePDF {
     let i = 0;
     while (i < line.length) {
       const bold = line[i].bold;
-      let run = i > 0 && line[i].spaceBefore ? " " : "";
-      let j = i;
+      // Bygg en run av samma-viktsord. Interna mellanslag bäddas in i strängen
+      // (inte ledande/avslutande) så visaren lägger ut dem korrekt.
+      let run = line[i].w;
+      let j = i + 1;
       while (j < line.length && line[j].bold === bold) {
-        if (j > i) run += line[j].spaceBefore ? " " + line[j].w : line[j].w;
-        else run += line[j].w;
+        run += (line[j].spaceBefore ? " " : "") + line[j].w;
         j++;
       }
       this.font(bold, italic);
       d.text(run, cx, y);
-      cx += d.getTextWidth(run);
+      // Flytta cx till nästa run ENDAST vid viktbyte. AFM-bredd matchar
+      // visarens utritning exakt; gränsmellanslaget (om nästa token hade ett
+      // i källtexten) läggs som en ren cx-förflyttning – aldrig som ledande
+      // blanksteg i en sträng (det trimmar jsPDF bort vid utritning).
+      if (j < line.length) {
+        cx += afmWidth(run, bold, fontSize);
+        if (line[j].spaceBefore) cx += afmWidth(" ", false, fontSize);
+      }
       i = j;
     }
   }
@@ -441,11 +504,25 @@ class GuidePDF {
 
   paragraph(text: string, size = 10.5, lh = 15.5, source?: string) {
     const lines = this.wrap(text, this.contentWidth, size);
-    for (const line of lines) {
-      this.ensure(lh);
+    const multi = lines.length > 1;
+    // Mät ev. källrad i förväg så att styckets sista rad och källraden hålls
+    // ihop (källraden får aldrig bli ensam överst på en ny sida).
+    const srcLines = source
+      ? this.wrap(`Källa: ${source}`, this.contentWidth, 8.5)
+      : [];
+    const srcH = srcLines.length * 12;
+    lines.forEach((line, idx) => {
+      const isLast = idx === lines.length - 1;
+      // Orphan-skydd: håll ihop de två FÖRSTA raderna. Widow-skydd: bryt hellre
+      // före NÄST SISTA raden så de två sista raderna följs åt. Sista raden
+      // reserverar dessutom plats för ev. källrad (binder källan till stycket).
+      let need = lh;
+      if (multi && (idx === 0 || idx === lines.length - 2)) need = 2 * lh;
+      if (isLast && source) need = lh + 3 + srcH;
+      this.ensure(need);
       this.drawLine(line, this.marginX, this.y, size, INK);
       this.y += lh;
-    }
+    });
     this.y += source ? 3 : 7;
     if (source) {
       this.sourceLine(source);
@@ -454,11 +531,15 @@ class GuidePDF {
   }
 
   subheading(text: string) {
-    this.ensure(30);
-    this.y += 6;
     const lines = this.wrap(text, this.contentWidth, 13.5);
+    // Keep-together / orphan-skydd: en underrubrik får aldrig hamna ensam sist
+    // på en sida. Säkerställ plats för rubrikens egna rader (19 pt/rad) PLUS ca
+    // 35 pt brödtextutrymme (~2 rader) av det som rimligen följer, annars
+    // sidbrott först. subheading() känner inte till nästa block – 35 pt är en
+    // konservativ buffert.
+    this.ensure(lines.length * 19 + 35);
+    this.y += 6;
     for (const line of lines) {
-      this.ensure(19);
       this.drawLine(line, this.marginX, this.y, 13.5, BRAND);
       this.y += 19;
     }
@@ -536,11 +617,35 @@ class GuidePDF {
       n === 3 ? [0.3, 0.35, 0.35] : n === 2 ? [0.34, 0.66] : new Array(n).fill(1 / n);
     const widths = weights.map((w) => w * this.contentWidth);
 
+    // Mät ev. källrad i förväg så att sista raden + källan hålls ihop.
+    const srcLines = source
+      ? this.wrap(`Källa: ${source}`, this.contentWidth, 8.5)
+      : [];
+    const srcH = srcLines.length * 12;
+
+    // Toppen (y) för tabellsegmentet på aktuell sida. Sätts av drawHeader och
+    // används för att rita yttre ram + vertikala kolumnlinjer per sid-segment
+    // (en bruten tabell får alltså en korrekt ram på varje sida).
+    let segTop = 0;
+    const drawFrame = (bottom: number) => {
+      this.stroke(HAIRLINE);
+      d.setLineWidth(0.5);
+      // diskret yttre ram runt segmentet
+      d.rect(this.marginX, segTop, this.contentWidth, bottom - segTop, "S");
+      // tunna vertikala linjer mellan kolumnerna
+      let vx = this.marginX;
+      for (let i = 0; i < n - 1; i++) {
+        vx += widths[i];
+        d.line(vx, segTop, vx, bottom);
+      }
+    };
+
     const drawHeader = () => {
       const hLines = columns.map((c, i) => this.wrap(c, widths[i] - padX * 2, size));
       const hRows = Math.max(...hLines.map((l) => l.length), 1);
       const hHeight = hRows * lh + padY * 2;
       this.ensure(hHeight + 4);
+      segTop = this.y; // toppen av detta tabellsegment (för ramen)
       this.fill(BRAND);
       d.rect(this.marginX, this.y, this.contentWidth, hHeight, "F");
       let cx = this.marginX;
@@ -563,7 +668,12 @@ class GuidePDF {
       );
       const rRows = Math.max(...cellLines.map((l) => l.length), 1);
       const rHeight = rRows * lh + padY * 2;
-      if (this.y + rHeight > this.contentBottom) {
+      // Sista raden reserverar plats för ev. källrad så den inte blir ensam
+      // överst på nästa sida.
+      const isLastRow = rIdx === rows.length - 1;
+      const need = rHeight + (isLastRow && source ? 6 + srcH : 0);
+      if (this.y + need > this.contentBottom) {
+        drawFrame(this.y); // avsluta ramen för segmentet som tar slut här
         this.newPage();
         drawHeader();
       }
@@ -588,6 +698,7 @@ class GuidePDF {
       this.y += rHeight;
     });
 
+    drawFrame(this.y); // yttre ram + kolumnlinjer för sista segmentet
     this.y += 6;
     if (source) this.sourceLine(source);
     this.y += 6;
@@ -595,11 +706,15 @@ class GuidePDF {
 
   sourceLine(source: string) {
     const lines = this.wrap(`Källa: ${source}`, this.contentWidth, 8.5);
-    for (const line of lines) {
-      this.ensure(12);
+    // Källraden binds normalt till sitt innehåll redan av anroparen
+    // (paragraph()/table() reserverar plats för källan tillsammans med sista
+    // raden/raden). Här är extra skydd: första källraden mäts tillsammans med
+    // en rads höjd så att den inte hamnar ensam överst på en ny sida.
+    lines.forEach((line, idx) => {
+      this.ensure(idx === 0 ? 12 + 16 : 12);
       this.drawLine(line, this.marginX, this.y, 8.5, MUTED, true);
       this.y += 12;
-    }
+    });
   }
 
   callout(block: CalloutBlock) {
@@ -659,28 +774,47 @@ class GuidePDF {
     const size = 10.5;
     const lh = 15.5;
     const indent = 22;
-    const box = 9;
-    for (const item of items) {
+    // Tom kryssruta (checklista att kryssa själv) – något större (10 i st. f. 9)
+    // för bättre balans mot texten. Behåller mörkblå 1,1 pt ram, ingen ifyllnad.
+    const box = 10;
+    // Förmät varje posts höjd (alla rader + 5 pt luft) så att en post aldrig
+    // splittras och så att orphan/widow-skydd kan tillämpas på sektionsnivå.
+    const itemHeights = items.map((it) => {
+      const lines = this.wrap(it, this.contentWidth - indent, size);
+      return lines.length * lh + 5;
+    });
+    items.forEach((item, idx) => {
       const lines = this.wrap(item, this.contentWidth - indent, size);
-      this.ensure(lh + 2);
+      // Keep-together: hela posten (kryssruta + alla rader) hålls ihop. Samma
+      // orphan/widow-logik som paragraph(): håll ihop de två FÖRSTA posterna,
+      // och bryt hellre före NÄST SISTA posten så de två sista följs åt – då
+      // hamnar aldrig en ensam sista punkt överst på en annars tom sida.
+      let need = itemHeights[idx];
+      if (idx === 0 && items.length > 1) need += itemHeights[1];
+      else if (idx === items.length - 2) need += itemHeights[idx + 1];
+      this.ensure(need);
       // kryssruta
       this.stroke(BRAND);
       d.setLineWidth(1.1);
       d.roundedRect(this.marginX, this.y - box - 1, box, box, 1.5, 1.5, "S");
       lines.forEach((line) => {
-        this.ensure(lh);
         this.drawLine(line, this.marginX + indent, this.y, size, INK);
         this.y += lh;
       });
       this.y += 5;
-    }
+    });
     this.y += 4;
   }
 
   links(items: { label: string; url: string; note?: string }[]) {
     const d = this.doc;
     for (const item of items) {
-      this.ensure(28);
+      // Förmät beskrivningens rader och håll ihop HELA länkposten (namn+URL-rad
+      // samt alla beskrivningsrader) så att den aldrig delas över ett sidbrott.
+      const noteLines = item.note
+        ? this.wrap(item.note, this.contentWidth - 16, 9.5)
+        : [];
+      this.ensure(14 + noteLines.length * 13 + 4);
       this.fill(ACCENT);
       d.circle(this.marginX + 3, this.y - 3.5, 2.3, "F");
       this.font(true);
@@ -695,13 +829,9 @@ class GuidePDF {
         url: item.url,
       });
       this.y += 14;
-      if (item.note) {
-        const noteLines = this.wrap(item.note, this.contentWidth - 16, 9.5);
-        for (const line of noteLines) {
-          this.ensure(13);
-          this.drawLine(line, this.marginX + 16, this.y, 9.5, MUTED);
-          this.y += 13;
-        }
+      for (const line of noteLines) {
+        this.drawLine(line, this.marginX + 16, this.y, 9.5, MUTED);
+        this.y += 13;
       }
       this.y += 8;
     }
