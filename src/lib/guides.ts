@@ -29,7 +29,7 @@ export const guides: Guide[] = [
   { slug: "dropshipping", name: "Dropshipping & E-handel", tagline: "Leverantörer, moms vid import och betallösningar.", available: true },
   { slug: "frisorsalong", name: "Frisörsalong", tagline: "Stol-hyra eller anställning, kassaregister och kunder.", available: false },
   { slug: "konsultforetag", name: "Konsultföretag", tagline: "Timpris, avtal och att gå från lön till eget.", available: true },
-  { slug: "redovisningsbyra", name: "Redovisningsbyrå", tagline: "Auktorisation, ansvar och att skala byrån.", available: false },
+  { slug: "redovisningsbyra", name: "Redovisningsbyrå", tagline: "Auktorisation, ansvar och att skala byrån.", available: true },
   { slug: "vvsforetag", name: "VVS-företag", tagline: "Behörighet, försäkring och offert som vinner.", available: true },
   { slug: "elforetag", name: "Elföretag", tagline: "Elbehörighet, egenkontroll och Elsäkerhetsverket.", available: true },
   { slug: "snickeri", name: "Snickeri & Hantverk", tagline: "Verkstad, maskiner och prissättning av hantverk.", available: true },

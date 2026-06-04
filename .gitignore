@@ -49,6 +49,7 @@ content/guides-pdf/*.pdf
 !content/guides-pdf/snickeri.pdf
 !content/guides-pdf/webbyra.pdf
 !content/guides-pdf/dropshipping.pdf
+!content/guides-pdf/redovisningsbyra.pdf
 
 # vercel
 .vercel
