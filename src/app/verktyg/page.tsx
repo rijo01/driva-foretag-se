@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://driva-foretag.se/verktyg" },
 };
 
-const kalkylatorer = [
+const kalkylatorer: {
+  title: string;
+  description: string;
+  emoji: string;
+  href?: string;
+}[] = [
   { title: "Lönekalkylator", description: "Beräkna bruttolön, nettolön, arbetsgivaravgifter och skatt.", emoji: "💵" },
   { title: "Momskalkylator", description: "Räkna ut moms (25%, 12%, 6%) på belopp snabbt.", emoji: "🧮" },
-  { title: "Vinstkalkylator", description: "Beräkna förväntad vinst och vinstmarginal.", emoji: "📈" },
+  { title: "Vinstkalkylator", description: "Beräkna förväntad vinst och vinstmarginal.", emoji: "📈", href: "/verktyg/vinstkalkylator" },
   { title: "Break-even-kalkylator", description: "Beräkna vid vilken omsättning du går plus.", emoji: "⚖️" },
   { title: "Utdelningskalkylator", description: "Räkna ut optimal lön vs utdelning i AB.", emoji: "💎" },
   { title: "Timpriskalkylator", description: "Räkna ut ditt timpris som konsult.", emoji: "⏱️" },
@@ -64,19 +69,34 @@ export default function VerktyPage() {
             Kalkylatorer ({kalkylatorer.length})
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {kalkylatorer.map((tool) => (
-              <div
-                key={tool.title}
-                className="p-6 bg-surface rounded-xl border border-gray-100 hover:shadow-md transition-shadow"
-              >
-                <span className="text-2xl mb-3 block">{tool.emoji}</span>
-                <h3 className="font-semibold text-brand mb-2">{tool.title}</h3>
-                <p className="text-sm text-gray-600">{tool.description}</p>
-                <span className="text-sm text-accent font-medium mt-3 inline-block">
-                  Kommer snart
-                </span>
-              </div>
-            ))}
+            {kalkylatorer.map((tool) =>
+              tool.href ? (
+                <Link
+                  key={tool.title}
+                  href={tool.href}
+                  className="p-6 bg-surface rounded-xl border border-gray-100 hover:shadow-md hover:border-accent/30 transition-all"
+                >
+                  <span className="text-2xl mb-3 block">{tool.emoji}</span>
+                  <h3 className="font-semibold text-brand mb-2">{tool.title}</h3>
+                  <p className="text-sm text-gray-600">{tool.description}</p>
+                  <span className="text-sm text-accent font-medium mt-3 inline-block">
+                    Öppna verktyget →
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  key={tool.title}
+                  className="p-6 bg-surface rounded-xl border border-gray-100 hover:shadow-md transition-shadow"
+                >
+                  <span className="text-2xl mb-3 block">{tool.emoji}</span>
+                  <h3 className="font-semibold text-brand mb-2">{tool.title}</h3>
+                  <p className="text-sm text-gray-600">{tool.description}</p>
+                  <span className="text-sm text-accent font-medium mt-3 inline-block">
+                    Kommer snart
+                  </span>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
