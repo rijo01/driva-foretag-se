@@ -46,6 +46,12 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-3">
             <Link
+              href="/guider"
+              className="px-4 py-2 text-sm font-medium text-brand border border-brand/20 rounded-lg hover:bg-surface transition-colors"
+            >
+              Guider
+            </Link>
+            <Link
               href="/verktyg"
               className="px-4 py-2 text-sm font-medium text-brand border border-brand/20 rounded-lg hover:bg-surface transition-colors"
             >
@@ -90,6 +96,13 @@ export default function Header() {
               </Link>
             ))}
             <hr className="my-2" />
+            <Link
+              href="/guider"
+              onClick={() => setMobileOpen(false)}
+              className="block px-3 py-2 text-brand font-medium"
+            >
+              📘 Guider
+            </Link>
             <Link
               href="/verktyg"
               onClick={() => setMobileOpen(false)}

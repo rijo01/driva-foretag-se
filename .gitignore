@@ -32,6 +32,23 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# guide-PDF:er (betalvara, serveras via /api/download – aldrig statiskt)
+# Endast färdiga, granskade guider committas. byggforetag är klar; övriga
+# läggs till när deras innehåll är skrivet och faktagranskat.
+content/guides-pdf/*.pdf
+!content/guides-pdf/byggforetag.pdf
+!content/guides-pdf/akeri.pdf
+!content/guides-pdf/restaurang.pdf
+!content/guides-pdf/stadforetag.pdf
+!content/guides-pdf/konsultforetag.pdf
+!content/guides-pdf/vvsforetag.pdf
+!content/guides-pdf/elforetag.pdf
+!content/guides-pdf/maleri.pdf
+!content/guides-pdf/snickeri.pdf
+!content/guides-pdf/webbyra.pdf
+!content/guides-pdf/dropshipping.pdf
 
 # vercel
 .vercel

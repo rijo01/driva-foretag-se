@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
 import { categories } from "@/lib/categories";
 import { getAllArticles } from "@/lib/content";
+import { guides } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://driva-foretag.se";
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/guider`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/verktyg`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/hitta-radgivare`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/om-oss`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
@@ -29,5 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: article.frontmatter.type === "pillar" ? 0.8 : 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...articlePages];
+  const guidePages: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${baseUrl}/guider/${guide.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...categoryPages, ...articlePages, ...guidePages];
 }
