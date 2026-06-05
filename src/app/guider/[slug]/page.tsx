@@ -48,6 +48,10 @@ export default async function GuideLandingPage({
     "@type": "Product",
     name: `Startguide: ${guide.name}`,
     description: `Branschspecifik startguide för ${guide.name.toLowerCase()} i PDF-format.`,
+    image: "https://driva-foretag.se/logo.png",
+    // Digital nedladdning (PDF) – inga frakt-/returfält (shippingDetails,
+    // hasMerchantReturnPolicy) eftersom produkten levereras direkt online.
+    category: "Digital guide (PDF-nedladdning)",
     brand: { "@type": "Brand", name: "Driva Företag" },
     offers: {
       "@type": "Offer",
@@ -56,6 +60,8 @@ export default async function GuideLandingPage({
       availability: guide.available
         ? "https://schema.org/InStock"
         : "https://schema.org/PreOrder",
+      availableDeliveryMethod:
+        "http://purl.org/goodrelations/v1#DeliveryModeDirectDownload",
       url: `https://driva-foretag.se/guider/${guide.slug}`,
     },
   };
