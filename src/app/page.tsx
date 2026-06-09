@@ -1,6 +1,9 @@
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import { categories } from "@/lib/categories";
+import { guides, GUIDE_PRICE_SEK } from "@/lib/guides";
+
+const featuredGuides = guides.slice(0, 4);
 
 const popularArticles = [
   { href: "/starta-foretag/enskild-firma-vs-aktiebolag", title: "Enskild firma vs Aktiebolag – Vilken bolagsform passar dig?" },
@@ -89,6 +92,58 @@ export default function HomePage() {
               className="px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors text-lg border border-white/20"
             >
               Utforska verktyg
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Branschspecifika startguider */}
+      <section className="py-16 lg:py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold mb-4">
+              Branschspecifika startguider
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Faktagranskade guider som tar dig från idé till första kunden – för
+              just din bransch.
+            </p>
+            <p className="text-sm text-gray-500 mb-10">
+              {guides.length} branscher · PDF · granskade mot Skatteverket och
+              Bolagsverket · från {GUIDE_PRICE_SEK} kr
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guider/${guide.slug}`}
+                className="group p-6 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent hover:border-accent/20"
+              >
+                <h3 className="font-heading font-bold text-lg text-brand mb-2 group-hover:text-accent transition-colors">
+                  {guide.name}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {guide.tagline}
+                </p>
+                <span className="text-sm text-accent font-medium mt-3 inline-block">
+                  Visa guiden →
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
+            <Link
+              href="/guider"
+              className="px-8 py-3.5 bg-accent hover:bg-accent-light text-white font-semibold rounded-lg transition-colors text-lg"
+            >
+              Se branschguiderna
+            </Link>
+            <Link
+              href="/guider"
+              className="text-accent font-semibold hover:underline"
+            >
+              Visa alla {guides.length} →
             </Link>
           </div>
         </div>
