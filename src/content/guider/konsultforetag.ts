@@ -16,7 +16,7 @@ import type { GuideContent } from "./types";
 //  • NYA 3:12-REGLER i kraft 1 januari 2026 (riksdagsbeslut 2025-11-26,
 //    tillämpas första gången inkomståret 2026):
 //      - Förenklingsregeln (2,75 IBB) slopad. Ersätts av ett GRUNDBELOPP =
-//        4 inkomstbasbelopp. IBB 2026 = 80 600 kr → grundbelopp ca 322 400 kr
+//        4 inkomstbasbelopp. IBB 2025 = 80 600 kr → grundbelopp ca 322 400 kr
 //        (vid 100 % ägande; fördelas på aktierna).
 //      - Lönebaserat utrymme = 50 % av ägarens andel av löneunderlaget som
 //        överstiger 8 IBB (644 800 kr 2026). 4 %-spärren och löneuttagskravet
@@ -272,7 +272,7 @@ const konsultforetag: GuideContent = {
         },
         {
           type: "paragraph",
-          text: "Utdelning upp till ditt **gränsbelopp** beskattas med **20 %** (tekniskt: två tredjedelar av utdelningen tas upp och beskattas i kapital med 30 %). Utdelning över gränsbeloppet beskattas som inkomst av tjänst. Enligt de nya reglerna består gränsbeloppet av ett **grundbelopp på fyra inkomstbasbelopp** plus ett **lönebaserat utrymme**. Med inkomstbasbeloppet 80 600 kr för 2026 blir grundbeloppet **cirka 322 400 kr** vid 100 % ägande (beloppet fördelas på aktierna om ni är flera ägare).",
+          text: "Utdelning upp till ditt **gränsbelopp** beskattas med **20 %** (tekniskt: två tredjedelar av utdelningen tas upp och beskattas i kapital med 30 %). Utdelning över gränsbeloppet beskattas som inkomst av tjänst. Enligt de nya reglerna består gränsbeloppet av ett **grundbelopp på fyra inkomstbasbelopp** plus ett **lönebaserat utrymme**. Med inkomstbasbeloppet 80 600 kr (IBB 2025, som styr gränsbeloppet för inkomståret 2026) blir grundbeloppet **cirka 322 400 kr** vid 100 % ägande (beloppet fördelas på aktierna om ni är flera ägare).",
           source: "Skatteverket, gränsbelopp och skatt på utdelning i fåmansföretag (grundbelopp 4 IBB; utdelning inom gränsbeloppet beskattas med 20 %).",
         },
         {
