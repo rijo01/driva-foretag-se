@@ -5,7 +5,7 @@ import { guides, GUIDE_PRICE_SEK } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Branschguider – kompletta startguider för 20 branscher",
   description:
-    "Branschspecifika startguider som PDF. Tillstånd, kostnader, registrering steg för steg och checklista – allt du behöver för att starta i din bransch. 399 kr per guide.",
+    "Branschspecifika startguider som PDF. Tillstånd, kostnader, registrering steg för steg och checklista – allt du behöver för att starta i din bransch. 199 kr per guide.",
   alternates: { canonical: "https://driva-foretag.se/guider" },
 };
 

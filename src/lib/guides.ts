@@ -5,7 +5,7 @@
 // säljkopia) och innehåller medvetet INGA faktasiffror (momssatser, avgifter,
 // aktiekapital osv.) – sådant är YMYL och får bara läggas till efter granskning.
 
-export const GUIDE_PRICE_SEK = 399;
+export const GUIDE_PRICE_SEK = 199;
 
 export interface Guide {
   slug: string;
