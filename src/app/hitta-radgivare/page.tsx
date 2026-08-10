@@ -58,8 +58,8 @@ export default function HittaRadgivarePage() {
             Hitta rätt rådgivare
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl">
-            Beskriv ditt behov så matchar vi dig med kvalificerade rådgivare
-            helt gratis och utan förpliktelser.
+            Beskriv ditt behov så återkommer vi med förslag på redovisningshjälp
+            eller annan rådgivning. Kostnadsfritt och utan förpliktelser.
           </p>
         </div>
       </section>
@@ -95,10 +95,10 @@ export default function HittaRadgivarePage() {
               Skicka din förfrågan
             </h2>
             <p className="text-gray-600 text-center mb-8">
-              Fyll i formuläret nedan så kontaktar vi dig inom 24 timmar med
-              matchade rådgivare.
+              Beskriv ditt behov så återkommer vi med förslag på
+              redovisningshjälp eller annan rådgivning.
             </p>
-            <LeadForm source="hitta-radgivare" />
+            <LeadForm source="hitta-radgivare" variant="full" />
           </div>
         </div>
       </section>
@@ -108,16 +108,23 @@ export default function HittaRadgivarePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl font-heading font-bold text-brand">100%</p>
-              <p className="text-gray-600 mt-1">Gratis och utan förpliktelser</p>
+              <p className="text-3xl font-heading font-bold text-brand">Kostnadsfritt</p>
+              <p className="text-gray-600 mt-1">
+                Det kostar inget att skicka en förfrågan
+              </p>
             </div>
             <div>
-              <p className="text-3xl font-heading font-bold text-brand">24h</p>
-              <p className="text-gray-600 mt-1">Svarstid på alla förfrågningar</p>
+              <p className="text-3xl font-heading font-bold text-brand">Utan förpliktelser</p>
+              <p className="text-gray-600 mt-1">
+                Du bestämmer själv om du vill gå vidare
+              </p>
             </div>
             <div>
-              <p className="text-3xl font-heading font-bold text-brand">Kvalitetssäkrade</p>
-              <p className="text-gray-600 mt-1">Alla rådgivare är verifierade</p>
+              <p className="text-3xl font-heading font-bold text-brand">Ingen lagring</p>
+              <p className="text-gray-600 mt-1">
+                Förfrågan mailas direkt till oss – vi sparar den inte i någon
+                databas
+              </p>
             </div>
           </div>
         </div>

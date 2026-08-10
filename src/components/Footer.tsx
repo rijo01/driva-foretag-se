@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { hasLiveAffiliates } from "@/lib/affiliates";
 
 const footerLinks = [
   {
@@ -65,8 +66,17 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Driva Företag. Informationen på denna
-          sajt utgör inte juridisk eller ekonomisk rådgivning.
+          <p>
+            © {new Date().getFullYear()} Driva Företag. Informationen på denna
+            sajt utgör inte juridisk eller ekonomisk rådgivning.
+          </p>
+          {/* Visas först när minst en affiliate-partner är aktiverad i src/lib/affiliates.ts */}
+          {hasLiveAffiliates() && (
+            <p className="mt-2">
+              Sajten innehåller annonslänkar. Varje sådan länk är märkt med
+              &quot;Annonslänk&quot; där den förekommer.
+            </p>
+          )}
         </div>
       </div>
     </footer>

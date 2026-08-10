@@ -12,6 +12,7 @@ import {
 import { getCategoryBySlug } from "@/lib/categories";
 import { getAuthorByName } from "@/lib/authors";
 import ShareButtons from "@/components/ShareButtons";
+import AffiliateCTA from "@/components/AffiliateCTA";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -63,6 +64,7 @@ function createHeadingComponent(level: 2 | 3) {
 const mdxComponents = {
   h2: createHeadingComponent(2),
   h3: createHeadingComponent(3),
+  AffiliateCTA,
 };
 
 export default async function ArticlePage({ params }: PageProps) {
