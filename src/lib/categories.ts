@@ -85,7 +85,7 @@ export const categories: Category[] = [
       { title: "SIE-filer – vad är det?", slug: "sie-filer", description: "Exportera bokföringsdata.", type: "cluster" },
       { title: "Fortnox recension", slug: "fortnox-recension", description: "Djupgående recension av Fortnox.", type: "cluster" },
       { title: "Bokio recension", slug: "bokio-recension", description: "Recension av Bokio bokföring.", type: "cluster" },
-      { title: "Visma eEkonomi recension", slug: "visma-eaccounting-recension", description: "Recension av Visma eEkonomi.", type: "cluster" },
+      { title: "Spiris Bokföring & Fakturering-recension", slug: "visma-eaccounting-recension", description: "Recension av Spiris Bokföring & Fakturering (tidigare Visma eEkonomi).", type: "cluster" },
     ],
   },
   {
