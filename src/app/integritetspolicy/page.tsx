@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, OWNER_COMPANY, OWNER_ORG_NR } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Integritetspolicy",
   description:
-    "Så behandlar driva-foretag.se personuppgifter: kontaktformulär, köp av guider, cookies och Google Analytics, och vilka rättigheter du har.",
+    "Så behandlar driva-foretag.se personuppgifter: köp av guider, cookies och Google Analytics, och vilka rättigheter du har.",
   alternates: { canonical: "https://driva-foretag.se/integritetspolicy" },
 };
 
@@ -86,38 +86,6 @@ export default function IntegritetspolicyPage() {
             rutan inte visas på varje sida. Den lagringen är nödvändig för att
             komma ihåg ditt val och kräver därför inget samtycke.
           </p>
-
-          <h2 className={h2}>När du skickar en förfrågan via formuläret</h2>
-          <p className={p}>
-            Formulären på startsidan och på{" "}
-            <Link href="/hitta-radgivare" className={a}>
-              Hitta rådgivare
-            </Link>{" "}
-            samlar in de uppgifter du själv fyller i: namn, e-post och meddelande
-            samt i förekommande fall telefon, företagsnamn, ort, bolagsform och
-            vilken typ av hjälp du söker.
-          </p>
-          <ul className={ul}>
-            <li>
-              <strong>Ändamål:</strong> att besvara din förfrågan och ge förslag
-              på rådgivning. Vi säljer inte dina uppgifter och lämnar inte ut dem
-              till rådgivare utan att du först har godkänt det.
-            </li>
-            <li>
-              <strong>Rättslig grund:</strong> ditt samtycke (kryssrutan i
-              formuläret) och åtgärder som du själv har begärt.
-            </li>
-            <li>
-              <strong>Mottagare:</strong> formuläret skickas via tjänsten
-              Web3Forms, som vidarebefordrar det som e-post till oss. Uppgifterna
-              sparas i vår e-post, inte i någon databas på sajten.
-            </li>
-            <li>
-              <strong>Lagringstid:</strong> vi raderar förfrågan när den är
-              besvarad och inte längre behövs, senast tolv månader efter den
-              senaste kontakten med dig.
-            </li>
-          </ul>
 
           <h2 className={h2}>När du köper en guide</h2>
           <p className={p}>

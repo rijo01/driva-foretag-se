@@ -26,7 +26,7 @@ const footerLinks = [
     title: "Resurser",
     links: [
       { href: "/verktyg", label: "Verktyg & kalkylatorer" },
-      { href: "/hitta-radgivare", label: "Hitta rådgivare" },
+      { href: "/hitta-radgivare", label: "Välja rådgivare" },
       { href: "/blogg", label: "Blogg" },
     ],
   },

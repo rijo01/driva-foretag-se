@@ -135,13 +135,13 @@ export default function OmOssPage() {
             </li>
           </ul>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Via{" "}
+            Vi förmedlar inga rådgivare och får ingen ersättning från
+            rådgivare eller byråer. Behöver du hjälp med ditt eget fall går vår
+            guide{" "}
             <Link href="/hitta-radgivare" className="text-accent hover:underline">
-              Hitta rådgivare
+              Så väljer du redovisningsbyrå eller revisor
             </Link>{" "}
-            kan du beskriva vad du behöver hjälp med, så återkommer vi med förslag.
-            Det är kostnadsfritt, och vi får ingen ersättning från rådgivare för
-            förmedlingen. Hur vi hanterar dina uppgifter står i vår{" "}
+            igenom vad du ska fråga om. Hur vi hanterar personuppgifter står i vår{" "}
             <Link href="/integritetspolicy" className="text-accent hover:underline">
               integritetspolicy
             </Link>

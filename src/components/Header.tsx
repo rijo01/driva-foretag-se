@@ -61,7 +61,7 @@ export default function Header() {
               href="/hitta-radgivare"
               className="px-4 py-2 text-sm font-medium text-white bg-accent hover:bg-accent-light rounded-lg transition-colors"
             >
-              Hitta rådgivare
+              Välja rådgivare
             </Link>
           </div>
 
@@ -115,7 +115,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className="block px-3 py-2 text-accent font-medium"
             >
-              🔍 Hitta rådgivare
+              🔍 Välja rådgivare
             </Link>
           </div>
         </div>

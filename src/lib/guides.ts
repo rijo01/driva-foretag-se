@@ -104,12 +104,12 @@ export function getFaq(name: string): GuideFaq[] {
     {
       question: "Kan jag få hjälp av en rådgivare också?",
       answer:
-        "Absolut. Guiden tar dig långt på egen hand, men vill du bolla ditt upplägg kan vi matcha dig med en rådgivare kostnadsfritt via /hitta-radgivare.",
+        "Vi förmedlar inga rådgivare, men på /hitta-radgivare finns en guide till hur du väljer redovisningskonsult eller revisor och vad du ska fråga om.",
     },
     {
       question: "Får jag tillbaka pengarna om jag ångrar mig?",
       answer:
-        "Eftersom det är en digital produkt som levereras direkt vid köp gäller särskilda villkor. Hör av dig till oss om något inte stämmer så löser vi det.",
+        "När du köper samtycker du till att guiden levereras direkt, och ångerrätten upphör när den har levererats. Har du betalat men inte laddat ner guiden kan du ångra köpet inom 14 dagar. Är något fel på guiden rättar vi det eller betalar tillbaka. Se köpvillkoren på /kopvillkor.",
     },
   ];
 }

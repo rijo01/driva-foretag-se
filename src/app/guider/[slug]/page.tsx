@@ -200,15 +200,16 @@ export default async function GuideLandingPage({
                 Guiden för {guide.name.toLowerCase()} kommer snart
               </h2>
               <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-                Vi skriver och faktagranskar just nu. Under tiden kan du få
-                kostnadsfri hjälp av en rådgivare.
+                Vi skriver och kontrollerar uppgifterna mot källorna just nu.
+                Under tiden kan du läsa hur du väljer redovisningskonsult eller
+                revisor.
               </p>
               <div className="flex justify-center">
                 <Link
                   href="/hitta-radgivare"
                   className="inline-flex items-center justify-center bg-accent hover:bg-accent-light text-brand font-semibold rounded-lg px-6 py-3 transition-colors"
                 >
-                  Hitta en rådgivare kostnadsfritt
+                  Så väljer du rådgivare
                 </Link>
               </div>
             </>

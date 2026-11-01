@@ -19,10 +19,12 @@ export default function Faktagranskningsmetod() {
           utan att kontrollera den på nytt.
         </li>
         <li>
-          <strong className="text-brand">Källorna redovisas i artikeln.</strong>{" "}
-          Artiklar som rör skatt, avgifter, juridik eller andra beslut med
-          ekonomiska konsekvenser avslutas med ett avsnitt där källorna listas,
-          så att du kan gå direkt till originalet och kontrollera oss.
+          <strong className="text-brand">Länkar till källan.</strong>{" "}
+          Artiklarna länkar till myndighetskällor som Skatteverket,
+          Bolagsverket och verksamt.se eller till lagtexten, så att du kan gå
+          direkt till originalet och kontrollera oss. Några äldre artiklar
+          saknar ännu sådana länkar och kompletteras löpande. Hittar du en
+          uppgift utan källa får du gärna höra av dig.
         </li>
         <li>
           <strong className="text-brand">Datum per artikel.</strong> Varje

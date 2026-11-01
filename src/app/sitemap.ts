@@ -24,16 +24,16 @@ const STATIC_LAST_MODIFIED: Record<string, string> = {
   "/verktyg/vinstkalkylator": "2026-06-04",
   "/verktyg/momskalkylator": "2026-06-04",
   "/verktyg/lonekalkylator": "2026-06-04",
-  "/hitta-radgivare": "2026-08-10",
+  "/hitta-radgivare": "2026-11-01",
   "/blogg": "2026-03-24",
   "/om-oss": "2026-11-01",
-  "/redaktionen": "2026-09-10",
+  "/redaktionen": "2026-11-01",
   "/integritetspolicy": "2026-11-01",
   "/kopvillkor": "2026-11-01",
 };
 
 /** Alla branschguider ligger i samma katalog och byggs om tillsammans. */
-const GUIDES_LAST_MODIFIED = "2026-07-07";
+const GUIDES_LAST_MODIFIED = "2026-11-01";
 
 /** updatedAt om den finns, annars publishedAt. Hanterar aven tom strang. */
 function articleDate(fm: { updatedAt?: string; publishedAt?: string }): string {

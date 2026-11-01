@@ -301,7 +301,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 ← Alla {catTitle}-artiklar
               </Link>
               <Link href="/hitta-radgivare" className="px-6 py-2.5 bg-accent hover:bg-accent-light text-white font-semibold rounded-lg transition-colors">
-                Hitta rådgivare
+                Välja rådgivare
               </Link>
             </div>
           </article>
@@ -328,9 +328,9 @@ export default async function ArticlePage({ params }: PageProps) {
 
               <div className="bg-gradient-to-br from-brand to-brand-light rounded-xl p-6 text-white">
                 <h3 className="font-heading font-bold text-lg mb-2">Behöver du hjälp?</h3>
-                <p className="text-sm text-gray-200 mb-4 leading-relaxed">Vi matchar dig med erfarna rådgivare – helt gratis.</p>
+                <p className="text-sm text-gray-200 mb-4 leading-relaxed">Så väljer du redovisningsbyrå eller revisor – och vad du ska fråga om innan du anlitar någon.</p>
                 <Link href="/hitta-radgivare" className="inline-block w-full text-center px-4 py-2.5 bg-accent hover:bg-accent-light text-white font-semibold rounded-lg transition-colors text-sm">
-                  Hitta rådgivare →
+                  Läs guiden →
                 </Link>
               </div>
 

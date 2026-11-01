@@ -63,7 +63,7 @@ export default function KopvillkorPage() {
 
           <h2 className={h2}>3. Pris och betalning</h2>
           <p className={p}>
-            Priset är {GUIDE_PRICE_SEK} kr per guide, inklusive eventuell moms.
+            Priset är {GUIDE_PRICE_SEK} kr per guide inklusive moms.
             Det pris som visas i kassan är det du betalar, och inga andra avgifter
             tillkommer. Du betalar med kort via Stripe. Köpet är klart när
             betalningen har godkänts.

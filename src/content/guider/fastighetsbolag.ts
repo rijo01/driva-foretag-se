@@ -599,7 +599,7 @@ const fastighetsbolag: GuideContent = {
           type: "callout",
           variant: "tip",
           title: "Vill du bolla ditt upplägg med en rådgivare?",
-          text: "Fastighetsägande är skattemässigt komplext och konsekvenserna av fel är stora. Vill du dubbelkolla struktur, finansiering eller skattefrågor med en expert kan vi matcha dig med en rådgivare kostnadsfritt på driva-foretag.se/hitta-radgivare.",
+          text: "Fastighetsägande är skattemässigt komplext och konsekvenserna av fel är stora. Vill du dubbelkolla struktur, finansiering eller skattefrågor med en expert, till exempel en redovisningskonsult eller revisor, finns tips om hur du väljer rätt på driva-foretag.se/hitta-radgivare.",
         },
       ],
     },

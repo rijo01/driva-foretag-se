@@ -85,13 +85,13 @@ export default function CategoryPage({ category }: { category: Category }) {
             Behöver du professionell hjälp?
           </h2>
           <p className="text-gray-600 mb-8">
-            Vi matchar dig med erfarna rådgivare inom {category.title.toLowerCase()}.
+            Läs vår guide om hur du väljer redovisningsbyrå eller revisor och vad du ska fråga om.
           </p>
           <Link
             href="/hitta-radgivare"
             className="inline-block px-8 py-3.5 bg-accent hover:bg-accent-light text-white font-semibold rounded-lg transition-colors"
           >
-            Hitta rådgivare →
+            Så väljer du rådgivare →
           </Link>
         </div>
       </section>

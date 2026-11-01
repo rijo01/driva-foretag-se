@@ -620,7 +620,7 @@ const webbyra: GuideContent = {
           type: "callout",
           variant: "tip",
           title: "Vill du bolla ditt upplägg med en rådgivare?",
-          text: "Den här guiden tar dig långt på egen hand. Vill du dubbelkolla val av bolagsform, moms vid utlandsförsäljning, avtal eller GDPR med en expert kan vi matcha dig med en rådgivare kostnadsfritt på driva-foretag.se/hitta-radgivare.",
+          text: "Den här guiden tar dig långt på egen hand. Vill du dubbelkolla val av bolagsform, moms vid utlandsförsäljning, avtal eller GDPR med en expert, till exempel en redovisningskonsult eller revisor, finns tips om hur du väljer rätt på driva-foretag.se/hitta-radgivare.",
         },
       ],
     },

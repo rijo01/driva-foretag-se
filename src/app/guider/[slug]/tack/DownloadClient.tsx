@@ -68,10 +68,19 @@ export default function DownloadClient({ slug }: { slug: string }) {
         >
           ⬇ Ladda ner guiden (PDF)
         </a>
-        <p className="mt-8 text-sm text-gray-500">
-          Vill du bolla ditt upplägg med en rådgivare?{" "}
+        <p className="mt-8 max-w-xl mx-auto text-sm text-gray-600 bg-surface rounded-lg px-4 py-3">
+          Du har samtyckt till omedelbar leverans och därmed avstått från
+          ångerrätten. Har du inte laddat ner guiden kan du fortfarande ångra
+          köpet inom 14 dagar, se{" "}
+          <Link href="/kopvillkor" className="text-accent underline">
+            köpvillkoren
+          </Link>
+          .
+        </p>
+        <p className="mt-6 text-sm text-gray-500">
+          Vill du bolla ditt upplägg med en redovisningskonsult eller revisor?{" "}
           <Link href="/hitta-radgivare" className="text-accent underline">
-            Hitta en rådgivare kostnadsfritt
+            Så väljer du rätt
           </Link>
           .
         </p>

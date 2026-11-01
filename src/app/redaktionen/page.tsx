@@ -83,14 +83,14 @@ export default function RedaktionenPage() {
               Behöver du någon som tittar på just ditt fall?
             </h2>
             <p className="text-gray-200 mb-5 leading-relaxed">
-              Vi matchar dig med rådgivare som kan gå igenom din situation.
-              Kostnadsfritt för dig som företagare.
+              Vi förmedlar inga rådgivare, men vår guide visar hur du väljer
+              redovisningsbyrå eller revisor och vad du ska fråga om.
             </p>
             <Link
               href="/hitta-radgivare"
               className="inline-block px-5 py-2.5 bg-accent hover:bg-accent-light text-white font-semibold rounded-lg transition-colors"
             >
-              Hitta rådgivare →
+              Så väljer du rådgivare →
             </Link>
           </div>
         </div>

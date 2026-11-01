@@ -1,5 +1,4 @@
 import Link from "next/link";
-import LeadForm from "@/components/LeadForm";
 import { categories } from "@/lib/categories";
 import { guides, GUIDE_PRICE_SEK } from "@/lib/guides";
 
@@ -106,11 +105,11 @@ export default function HomePage() {
               Branschspecifika startguider
             </h2>
             <p className="text-gray-600 mb-4">
-              Faktagranskade guider som tar dig från idé till första kunden – för
+              Källhänvisade guider som tar dig från idé till första kunden – för
               just din bransch.
             </p>
             <p className="text-sm text-gray-500 mb-10">
-              {guides.length} branscher · PDF · granskade mot Skatteverket och
+              {guides.length} branscher · PDF · med källor till Skatteverket och
               Bolagsverket · från {GUIDE_PRICE_SEK} kr
             </p>
           </div>
@@ -274,22 +273,6 @@ export default function HomePage() {
                 </ul>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Lead-formulär */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="bg-surface rounded-2xl p-8 lg:p-12">
-            <h2 className="text-3xl font-heading font-bold text-center mb-3">
-              Behöver du hjälp?
-            </h2>
-            <p className="text-gray-600 text-center mb-8">
-              Beskriv ditt behov så matchar vi dig med rätt rådgivare – helt
-              gratis.
-            </p>
-            <LeadForm source="homepage" />
           </div>
         </div>
       </section>
