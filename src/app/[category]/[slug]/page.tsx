@@ -10,7 +10,7 @@ import {
   getAdjacentArticles,
 } from "@/lib/content";
 import { getCategoryBySlug } from "@/lib/categories";
-import { getAuthorByName } from "@/lib/authors";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import ShareButtons from "@/components/ShareButtons";
 import AffiliateCTA from "@/components/AffiliateCTA";
 
@@ -78,7 +78,6 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const toc = extractToc(article.content);
   const { prev, next } = getAdjacentArticles(category, slug);
-  const author = getAuthorByName(article.frontmatter.author ?? "");
 
   const relatedArticles = getArticlesByCategory(category)
     .filter((a) => a.slug !== slug)
@@ -95,18 +94,17 @@ export default async function ArticlePage({ params }: PageProps) {
     datePublished: article.frontmatter.publishedAt,
     dateModified:
       article.frontmatter.updatedAt ?? article.frontmatter.publishedAt,
+    // Avsandare ar redaktionen som organisation, inte en namngiven person.
+    // Ingen Person/jobTitle – vi har inga verifierbara individer att peka pa.
     author: {
-      "@type": "Person",
-      name: article.frontmatter.author ?? "Driva Företag-redaktionen",
-      url: author
-        ? `https://driva-foretag.se/forfattare/${author.slug}`
-        : undefined,
-      jobTitle: author?.title,
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: `${SITE_URL}/redaktionen`,
     },
     publisher: {
       "@type": "Organization",
-      name: "Driva Företag",
-      url: "https://driva-foretag.se",
+      name: SITE_NAME,
+      url: SITE_URL,
     },
     mainEntityOfPage: articleUrl,
     inLanguage: "sv-SE",
@@ -188,35 +186,15 @@ export default async function ArticlePage({ params }: PageProps) {
                 {article.frontmatter.description}
               </p>
 
-              {/* Author + meta line */}
+              {/* Avsandare. Redaktionen som helhet – inga namngivna personer,
+                  och ingen "faktagranskad av"-badge utan en verklig granskare. */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-5">
-                {author && (
-                  <Link
-                    href={`/forfattare/${author.slug}`}
-                    className="inline-flex items-center gap-2 group"
-                  >
-                    <span
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold"
-                      style={{ backgroundColor: author.bgColor }}
-                    >
-                      {author.initials}
-                    </span>
-                    <span className="text-sm">
-                      <span className="text-gray-700 font-medium group-hover:text-accent transition-colors">
-                        {author.name}
-                      </span>
-                      <span className="text-gray-400"> · {author.title}</span>
-                    </span>
-                  </Link>
-                )}
-                {article.frontmatter.reviewedBy && (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-green-50 text-green-700 text-xs font-medium rounded-full border border-green-100">
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Faktagranskad av {article.frontmatter.reviewedBy}
-                  </span>
-                )}
+                <Link
+                  href="/redaktionen"
+                  className="text-sm text-gray-700 font-medium hover:text-accent transition-colors"
+                >
+                  {article.frontmatter.author ?? "Redaktionen, driva-foretag.se"}
+                </Link>
               </div>
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-3 text-sm text-gray-400">
@@ -268,44 +246,32 @@ export default async function ArticlePage({ params }: PageProps) {
               <MDXRemote source={article.content} components={mdxComponents} />
             </div>
 
-            {/* Author box (bottom) */}
-            {author && (
-              <div className="mt-12 p-6 bg-surface rounded-xl border border-gray-100">
-                <div className="flex items-start gap-4">
-                  <Link href={`/forfattare/${author.slug}`}>
-                    <span
-                      className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0"
-                      style={{ backgroundColor: author.bgColor }}
-                    >
-                      {author.initials}
-                    </span>
-                  </Link>
-                  <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-wider font-medium">
-                      Om författaren
-                    </p>
-                    <Link
-                      href={`/forfattare/${author.slug}`}
-                      className="font-heading font-bold text-brand hover:text-accent transition-colors"
-                    >
-                      {author.name}
-                    </Link>
-                    <p className="text-sm text-accent font-medium">
-                      {author.title}
-                    </p>
-                    <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                      {author.bio}
-                    </p>
-                    <Link
-                      href={`/forfattare/${author.slug}`}
-                      className="inline-block mt-3 text-sm text-accent font-medium hover:underline"
-                    >
-                      Läs fler artiklar av {author.name.split(" ")[0]} →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
+            {/* Om avsandaren. Metod i stallet for person – det ar det enda
+                vi kan sta for. */}
+            <div className="mt-12 p-6 bg-surface rounded-xl border border-gray-100">
+              <p className="text-sm text-gray-400 uppercase tracking-wider font-medium">
+                Om avsändaren
+              </p>
+              <Link
+                href="/redaktionen"
+                className="font-heading font-bold text-brand hover:text-accent transition-colors"
+              >
+                Redaktionen, driva-foretag.se
+              </Link>
+              <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                Artikeln är skriven och faktakontrollerad av redaktionen. Alla
+                belopp, procentsatser och lagrum kontrolleras mot primärkällan –
+                Skatteverket, Bolagsverket, Försäkringskassan eller lagtexten –
+                innan publicering, och källorna anges längst ned i artikeln.
+                Datumet ovan visar när innehållet senast stämdes av.
+              </p>
+              <Link
+                href="/redaktionen"
+                className="inline-block mt-3 text-sm text-accent font-medium hover:underline"
+              >
+                Så arbetar redaktionen →
+              </Link>
+            </div>
 
             {/* Share */}
             <div className="mt-8 pt-8 border-t border-gray-200">

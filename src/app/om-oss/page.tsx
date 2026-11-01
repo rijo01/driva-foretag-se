@@ -1,175 +1,151 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { authors } from "@/lib/authors";
+import Faktagranskningsmetod from "@/components/Faktagranskningsmetod";
+import {
+  CONTACT_EMAIL,
+  OWNER_COMPANY,
+  OWNER_ORG_NR,
+  isPlaceholder,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Om oss – Vår mission, redaktion och principer",
+  title: "Om oss – vem som står bakom driva-foretag.se",
   description:
-    "Driva Företag är Sveriges mest kompletta resurs för företagare. Läs om vår redaktion, mission, principer och hur vi arbetar.",
+    "driva-foretag.se är en guidesajt för svenska företagare. Läs om vem som driver sajten, hur vi faktagranskar belopp och lagrum, och hur sajten finansieras.",
   alternates: { canonical: "https://driva-foretag.se/om-oss" },
 };
+
+/** Liten röd markör så att en oifylld platshållare inte kan smita förbi. */
+function Platshallare() {
+  return (
+    <span className="text-red-600 font-medium">
+      {" "}
+      (platshållare – fylls i före publicering)
+    </span>
+  );
+}
 
 export default function OmOssPage() {
   return (
     <>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 text-sm text-gray-500">
-        <Link href="/" className="hover:text-brand">Hem</Link>
+        <Link href="/" className="hover:text-brand">
+          Hem
+        </Link>
         <span className="mx-2">/</span>
         <span className="text-brand font-medium">Om oss</span>
       </nav>
 
-      <section className="py-16 lg:py-20">
+      <section className="py-12 lg:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-brand mb-8">
-            Om Driva Företag
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-brand mb-6">
+            Om driva-foretag.se
           </h1>
 
-          {/* Mission */}
-          <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Vår mission
+          {/* Vad sajten ar */}
+          <h2 className="font-heading text-2xl font-bold text-brand mt-10 mb-4">
+            Vad sajten är
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Driva Företag finns för att göra det enklare att starta och driva
-            företag i Sverige. Vi tror att alla blivande företagare förtjänar
-            tillgång till kvalitativ, lättförståelig information – oavsett
-            bakgrund eller budget.
+            driva-foretag.se är en guidesajt för dig som driver eller ska starta
+            företag i Sverige. Här finns artiklar om bolagsformer, bokföring,
+            skatt, moms, arbetsrätt, personalfrågor, finansiering och
+            marknadsföring, samt några kalkylatorer för moms, lön och vinst.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Vår vision är att vara den mest kompletta och pålitliga resursen
-            för svenska företagare. Från den första affärsidén till skalbar
-            tillväxt.
+            Målet är enkelt: att du ska hitta rätt siffra och rätt regel utan att
+            behöva leta igenom myndighetstexter själv – och att du ska kunna
+            kontrollera varje uppgift mot originalkällan när det gäller något
+            viktigt.
           </p>
 
-          {/* Redaktion */}
+          {/* Vem som driver den */}
           <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Vår redaktion
+            Vem som driver sajten
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Alla artiklar på Driva Företag skrivs av ämnesexperter med gedigen
-            bakgrund inom sina respektive områden. Vår redaktion består av
-            auktoriserade revisorer, affärsjurister, skattekonsulter och
-            marknadsföringsexperter.
+            Sajten ägs och drivs av{" "}
+            <strong className="text-brand">{OWNER_COMPANY}</strong>
+            {isPlaceholder(OWNER_COMPANY) && <Platshallare />}, organisationsnummer{" "}
+            <strong className="text-brand">{OWNER_ORG_NR}</strong>
+            {isPlaceholder(OWNER_ORG_NR) && <Platshallare />}.
           </p>
-          <div className="space-y-4 mb-8">
-            {authors.map((author) => (
-              <Link
-                key={author.slug}
-                href={`/forfattare/${author.slug}`}
-                className="group flex items-center gap-4 p-4 bg-surface rounded-xl hover:shadow-sm transition-shadow"
-              >
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shrink-0"
-                  style={{ backgroundColor: author.bgColor }}
-                >
-                  {author.initials}
-                </span>
-                <div>
-                  <p className="font-semibold text-brand group-hover:text-accent transition-colors">
-                    {author.name}
-                  </p>
-                  <p className="text-sm text-gray-500">{author.title}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Innehållet ges ut av{" "}
+            <Link href="/redaktionen" className="text-accent hover:underline">
+              redaktionen
+            </Link>{" "}
+            och publiceras under namnet{" "}
+            <strong className="text-brand">Redaktionen, driva-foretag.se</strong>
+            . Vi publicerar inte artiklar under enskilda skribenters namn, och vi
+            anger inga titlar eller meriter som inte går att kontrollera.
+          </p>
 
-          {/* Redaktionell policy */}
+          {/* Kontakt */}
           <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Redaktionell policy
+            Kontakt
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Alla artiklar faktagranskas av experter inom respektive område. Vi
-            uppdaterar innehållet löpande för att säkerställa att informationen
-            är korrekt och aktuell. Varje artikel har en tydlig faktagranskningsbadge
-            som visar vilken typ av expert som har granskat innehållet.
+            Frågor, rättelser och synpunkter går till{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-accent hover:underline"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            . Gäller det en enskild artikel, skriv gärna vilken – det gör det
+            snabbare att rätta.
           </p>
-          <div className="space-y-4 mb-8">
-            <div className="bg-surface rounded-xl p-5">
-              <p className="font-semibold text-brand mb-1">Skattartiklar</p>
-              <p className="text-sm text-gray-600">Faktagranskas av auktoriserad revisor med expertis inom företagsbeskattning.</p>
-            </div>
-            <div className="bg-surface rounded-xl p-5">
-              <p className="font-semibold text-brand mb-1">Juridikartiklar</p>
-              <p className="text-sm text-gray-600">Faktagranskas av affärsjurist med specialisering på bolagsrätt och avtal.</p>
-            </div>
-            <div className="bg-surface rounded-xl p-5">
-              <p className="font-semibold text-brand mb-1">Övriga artiklar</p>
-              <p className="text-sm text-gray-600">Faktagranskas av redaktionen och relevanta ämnesexperter.</p>
-            </div>
-          </div>
 
-          {/* Så arbetar vi */}
+          {/* Faktagranskning */}
           <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Så arbetar vi
+            Så faktagranskar vi
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Varje artikel på Driva Företag genomgår en noggrann process innan
-            publicering:
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Sajten handlar om pengar, skatt och juridik. En felaktig siffra kan
+            kosta en läsare riktiga pengar. Därför arbetar vi så här:
           </p>
-          <ol className="list-decimal pl-6 space-y-3 text-gray-700 mb-6">
-            <li>
-              <strong className="text-brand">Research</strong> – Vi analyserar
-              aktuella lagar, regler och praxis från Skatteverket, Bolagsverket
-              och andra myndigheter.
-            </li>
-            <li>
-              <strong className="text-brand">Skrivande</strong> – En ämnesexpert
-              skriver artikeln med fokus på praktisk tillämpning för svenska
-              företagare.
-            </li>
-            <li>
-              <strong className="text-brand">Faktagranskning</strong> – En
-              oberoende granskare kontrollerar att alla siffror, lagrum och
-              rekommendationer är korrekta.
-            </li>
-            <li>
-              <strong className="text-brand">Publicering och uppdatering</strong>{" "}
-              – Vi publicerar artikeln och granskar den löpande. Alla artiklar
-              har ett synligt &quot;senast uppdaterad&quot;-datum.
-            </li>
-          </ol>
-
-          {/* Principer */}
-          <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Våra principer
-          </h2>
-          <div className="space-y-6 mb-8">
-            <div className="bg-surface rounded-xl p-6">
-              <h3 className="font-semibold text-brand mb-2">Kvalitet framför kvantitet</h3>
-              <p className="text-gray-700">Varje guide är noggrant researchad och skriven för att ge verkligt värde. Vi publicerar inte innehåll bara för att fylla sidor.</p>
-            </div>
-            <div className="bg-surface rounded-xl p-6">
-              <h3 className="font-semibold text-brand mb-2">Oberoende rådgivning</h3>
-              <p className="text-gray-700">Vi rekommenderar aldrig produkter eller tjänster baserat på ekonomiska incitament. Våra guider är skrivna utifrån företagarens bästa.</p>
-            </div>
-            <div className="bg-surface rounded-xl p-6">
-              <h3 className="font-semibold text-brand mb-2">Alltid uppdaterat</h3>
-              <p className="text-gray-700">Svenska lagar och regler ändras. Vi granskar och uppdaterar vårt innehåll regelbundet för att säkerställa att det är korrekt.</p>
-            </div>
-            <div className="bg-surface rounded-xl p-6">
-              <h3 className="font-semibold text-brand mb-2">Tillgängligt för alla</h3>
-              <p className="text-gray-700">Allt innehåll är gratis. Vi skriver på klarspråk utan onödig jargong så att alla kan förstå.</p>
-            </div>
-          </div>
+          <Faktagranskningsmetod />
 
           {/* Finansiering */}
           <h2 className="font-heading text-2xl font-bold text-brand mt-12 mb-4">
-            Hur vi finansieras
+            Hur sajten finansieras
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Driva Företag finansieras genom att matcha företagare med
-            kvalificerade rådgivare via vår{" "}
+            Artiklarna är gratis att läsa. Sajten finansieras på två sätt:
+          </p>
+          <ul className="list-disc pl-6 space-y-3 text-gray-700 mb-6">
+            <li>
+              <strong className="text-brand">Branschguider.</strong> Vi säljer
+              fördjupade{" "}
+              <Link href="/guider" className="text-accent hover:underline">
+                startguider som PDF
+              </Link>{" "}
+              för enskilda branscher. Köpvillkoren finns på{" "}
+              <Link href="/kopvillkor" className="text-accent hover:underline">
+                Köpvillkor
+              </Link>
+              .
+            </li>
+            <li>
+              <strong className="text-brand">Annonslänkar.</strong> Vissa länkar
+              till tjänsteleverantörer kan ge oss ersättning. Varje sådan länk är
+              märkt &quot;Annonslänk&quot; där den förekommer. Ersättning styr
+              aldrig vad vi skriver eller vilka verktyg vi beskriver.
+            </li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Via{" "}
             <Link href="/hitta-radgivare" className="text-accent hover:underline">
               Hitta rådgivare
+            </Link>{" "}
+            kan du beskriva vad du behöver hjälp med, så återkommer vi med förslag.
+            Det är kostnadsfritt, och vi får ingen ersättning från rådgivare för
+            förmedlingen. Hur vi hanterar dina uppgifter står i vår{" "}
+            <Link href="/integritetspolicy" className="text-accent hover:underline">
+              integritetspolicy
             </Link>
-            -tjänst. Rådgivare betalar för kvalificerade leads, medan tjänsten
-            är helt gratis för företagare.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Vi kan även ha affiliate-partnerskap med utvalda tjänsteleverantörer.
-            Dessa partnerskap påverkar aldrig våra redaktionella
-            rekommendationer – vi markerar alltid tydligt när en länk är en
-            affiliatelänk.
+            .
           </p>
         </div>
       </section>

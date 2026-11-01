@@ -7,6 +7,20 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/download": ["./content/guides-pdf/**/*"],
   },
+
+  // De gamla författarsidorna (påhittade personer) är borttagna. Både index
+  // och varje enskild författar-slug skickas med 301 till /redaktionen, som nu
+  // är sajtens avsändare. (statusCode i stället för permanent, som ger 308.)
+  async redirects() {
+    return [
+      { source: "/forfattare", destination: "/redaktionen", statusCode: 301 },
+      {
+        source: "/forfattare/:slug",
+        destination: "/redaktionen",
+        statusCode: 301,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

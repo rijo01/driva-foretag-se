@@ -17,10 +17,9 @@ category: "skatt"         # måste matcha mappnamnet
 type: "cluster"           # pillar | cluster
 publishedAt: "2026-05-28" # INTE date
 updatedAt: "2026-05-28"   # INTE updated
-author: "Anna Ekström"    # måste vara en av de 4 nedan, exakt stavning
+author: "Redaktionen, driva-foretag.se"
 readTime: "9 min"
 tags: ["...", "..."]
-reviewedBy: "..."
 ---
 ```
 
@@ -57,20 +56,17 @@ Svar direkt under, ingen prefix.
 - Skriv: `### Ren fråga?` följt av svaret.
 - Skriv **INTE** `### H: fråga?` / `**S:** svar` – "H:"-prefixet hamnar i schemat och förstör det.
 
-## Författare (måste matcha `src/lib/authors.ts` exakt, annars ingen författarruta)
+## Författare och granskning
 
-| Kategori | Författare |
-|---|---|
-| `skatt` | Anna Ekström |
-| `juridik` | Maria Berggren |
-| `personal-hr` | Maria Berggren |
-| `marknadsforing` | Johan Wikström |
-| `ai-effektivisering` | Johan Wikström |
-| `bokforing-ekonomi` | Erik Lindström |
-| `starta-foretag` | välj närmast relevant (Erik/Maria) |
-| `finansiering` | välj närmast relevant (Erik/Anna) |
+Alla artiklar publiceras under en och samma avsändare:
 
-Namn som "Driva Företag" / "Redaktion…" matchar ingen författare → ingen författarruta. Undvik.
+```yaml
+author: "Redaktionen, driva-foretag.se"
+```
+
+- Hitta **aldrig** på personnamn, titlar eller meriter. Inga "Faktagranskad av …"-märkningar och inget `reviewedBy`-fält – fältet finns inte längre i koden.
+- Artikelschemat har Organization som author (→ /redaktionen), aldrig Person.
+- Ägare och kontaktuppgifter finns bara i `src/lib/site.ts`.
 
 ## YMYL – verifiera ALL fakta vid skrivning
 
