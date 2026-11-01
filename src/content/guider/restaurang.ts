@@ -22,7 +22,7 @@ import type { GuideContent } from "./types";
 //  • Personalliggare krävs i restaurangbranschen; kontrollavgift 12 500 kr +
 //    2 500 kr per ej antecknad person (Skatteverket).
 //  • Arbetsgivaravgift 31,42 % (2026), aktiekapital privat AB 25 000 kr,
-//    AB-registrering 1 900 kr e-tjänst / 2 200 kr blankett.
+//    AB-registrering 2 400 kr e-tjänst / 2 700 kr blankett.
 //  • Rökförbud gäller även uteserveringar (lagen 2018:2088 om tobak och
 //    liknande produkter). Allergeninformation enligt EU-förordning 1169/2011.
 //  • Kollektivavtal: Gröna riksavtalet mellan Visita och Hotell- och
@@ -210,7 +210,7 @@ const restaurang: GuideContent = {
           columns: ["Post", "Kommentar"],
           rows: [
             ["Aktiekapital (om AB)", "25 000 kr – sätts in på företagskonto, är ditt och kan användas i driften"],
-            ["Registrering AB hos Bolagsverket", "1 900 kr via e-tjänst på verksamt.se (2 200 kr med pappersblankett)"],
+            ["Registrering AB hos Bolagsverket", "2 400 kr via e-tjänst på verksamt.se (2 700 kr med pappersblankett)"],
             ["F-skatt och momsregistrering", "Gratis hos Skatteverket"],
             ["Livsmedelsregistrering + kontrollavgift", "Avgift varierar per kommun – kontrollera lokalt"],
             ["Serveringstillstånd (om alkohol)", "Ansökningsavgift varierar per kommun – kontrollera lokalt"],
@@ -220,7 +220,7 @@ const restaurang: GuideContent = {
             ["Försäkringar", "Företags-, egendoms- och avbrottsförsäkring (se kapitel 7)"],
             ["Varulager och rörelsekapital", "Råvaror plus pengar för löner och hyra innan intäkterna bär"],
           ],
-          source: "Bolagsverket (1 900 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
+          source: "Bolagsverket (2 400 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
         },
         {
           type: "callout",
@@ -246,7 +246,7 @@ const restaurang: GuideContent = {
             },
             {
               title: "Registrera företaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
             },
             {
               title: "Ansök om F-skatt och momsregistrering",
@@ -570,7 +570,7 @@ const restaurang: GuideContent = {
           items: [
             "Valt bolagsform (enskild firma eller AB) utifrån ansvar, skatt och risk",
             "Kontrollerat och valt företagsnamn hos Bolagsverket",
-            "Registrerat företaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat företaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt och momsregistrering hos Skatteverket",
             "Anmält verklig huvudman (AB)",
             "Öppnat företagskonto",

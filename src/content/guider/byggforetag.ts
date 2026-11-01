@@ -5,7 +5,7 @@ import type { GuideContent } from "./types";
 //
 // YMYL – faktagranskad mot primärkälla. Verifierade siffror (juni 2026):
 //  • Aktiekapital privat AB: 25 000 kr (Bolagsverket)
-//  • AB-nyregistrering: 1 900 kr e-tjänst / 2 200 kr blankett (Bolagsverket)
+//  • AB-nyregistrering: 2 400 kr e-tjänst / 2 700 kr blankett (Bolagsverket)
 //  • Momsbefrielse-gräns: omsättning ≤ 120 000 kr/år (Skatteverket, fr.o.m.
 //    1 jan 2025, höjt från 80 000 kr)
 //  • Moms normalsats: 25 % (Skatteverket)
@@ -195,8 +195,8 @@ const byggforetag: GuideContent = {
           columns: ["Post", "Kommentar"],
           rows: [
             ["Aktiekapital (om AB)", "25 000 kr – sätts in på företagskonto, är ditt och kan användas i driften"],
-            ["Registrering AB hos Bolagsverket", "1 900 kr via e-tjänst på verksamt.se (2 200 kr med pappersblankett)"],
-            ["Registrering enskild firma", "Frivillig; ca 1 000 kr för att skydda firmanamnet (kontrollera aktuell avgift)"],
+            ["Registrering AB hos Bolagsverket", "2 400 kr via e-tjänst på verksamt.se (2 700 kr med pappersblankett)"],
+            ["Registrering enskild firma", "Frivillig; 1 800 kr via e-tjänst (2 100 kr på blankett) för att skydda firmanamnet"],
             ["F-skatt och momsregistrering", "Gratis hos Skatteverket"],
             ["ID06-kort", "Kostnad per kort/person – kontrollera aktuellt pris hos ID06"],
             ["Verktyg och maskiner", "Den enskilt största startposten – budgetera efter ditt yrke"],
@@ -204,7 +204,7 @@ const byggforetag: GuideContent = {
             ["Försäkringar", "Ansvars-, allrisk- och fordonsförsäkring (se kapitel 7)"],
             ["Arbetskläder och skydd", "Personlig skyddsutrustning enligt arbetsmiljökraven"],
           ],
-          source: "Bolagsverket (1 900 kr AB e-tjänst, 25 000 kr aktiekapital) och Skatteverket (F-skatt/moms gratis).",
+          source: "Bolagsverket (2 400 kr AB e-tjänst, 25 000 kr aktiekapital) och Skatteverket (F-skatt/moms gratis).",
         },
         {
           type: "callout",
@@ -234,7 +234,7 @@ const byggforetag: GuideContent = {
             },
             {
               title: "Registrera företaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras hos Bolagsverket, men du kan göra det för att skydda namnet.",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras hos Bolagsverket, men du kan göra det för att skydda namnet.",
             },
             {
               title: "Ansök om F-skatt hos Skatteverket",
@@ -559,7 +559,7 @@ const byggforetag: GuideContent = {
           items: [
             "Valt bolagsform (enskild firma eller AB) utifrån ansvar, skatt och beställarkrav",
             "Kontrollerat och valt företagsnamn hos Bolagsverket",
-            "Registrerat företaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat företaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt hos Skatteverket (gratis)",
             "Momsregistrerat företaget",
             "Anmält verklig huvudman (AB)",

@@ -4,7 +4,7 @@ import type { GuideContent } from "./types";
 // STARTGUIDE: FASTIGHETSBOLAG
 //
 // YMYL – faktagranskad mot primärkälla. Verifierade uppgifter (juni 2026):
-//  • Aktiekapital privat AB 25 000 kr; AB-reg 1 900 kr e-tjänst / 2 200 kr
+//  • Aktiekapital privat AB 25 000 kr; AB-reg 2 400 kr e-tjänst / 2 700 kr
 //    blankett (Bolagsverket). Bolagsskatt 20,6 % (Skatteverket).
 //  • STÄMPELSKATT vid lagfart (Lantmäteriet): juridisk person (t.ex. AB,
 //    handelsbolag, ekonomisk förening) 4,25 % av högsta av köpeskilling eller
@@ -225,7 +225,7 @@ const fastighetsbolag: GuideContent = {
             },
             {
               title: "Registrera bolaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr** (stiftelseurkund, bolagsordning och bankintyg på aktiekapitalet 25 000 kr).",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr** (stiftelseurkund, bolagsordning och bankintyg på aktiekapitalet 25 000 kr).",
             },
             {
               title: "Ansök om F-skatt och ta ställning till moms",
@@ -525,7 +525,7 @@ const fastighetsbolag: GuideContent = {
           type: "checklist",
           items: [
             "Satt ägarform och eventuell koncernstruktur med skatterådgivare",
-            "Registrerat bolaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat bolaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt och tagit ställning till moms (bostad/lokal)",
             "Anmält verklig huvudman (AB)",
             "Öppnat företagskonto",

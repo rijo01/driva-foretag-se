@@ -28,7 +28,7 @@ import type { GuideContent } from "./types";
 //  • Vägavgift: tidsbaserad (Eurovinjett) för tunga fordon – ingen avståndsbaserad
 //    km-skatt i kraft 2026 (Skatteverket/Transportstyrelsen).
 //  • Moms normalsats 25 %, arbetsgivaravgift 31,42 % (2026), aktiekapital privat
-//    AB 25 000 kr, AB-registrering 1 900 kr e-tjänst / 2 200 kr blankett
+//    AB 25 000 kr, AB-registrering 2 400 kr e-tjänst / 2 700 kr blankett
 //    (Skatteverket, Bolagsverket).
 //
 // Där en exakt siffra inte gått att verifiera mot primärkälla skrivs den
@@ -226,7 +226,7 @@ const akeri: GuideContent = {
           columns: ["Post", "Kommentar"],
           rows: [
             ["Aktiekapital (om AB)", "25 000 kr – sätts in på företagskonto, är ditt och kan användas i driften"],
-            ["Registrering AB hos Bolagsverket", "1 900 kr via e-tjänst på verksamt.se (2 200 kr med pappersblankett)"],
+            ["Registrering AB hos Bolagsverket", "2 400 kr via e-tjänst på verksamt.se (2 700 kr med pappersblankett)"],
             ["Ekonomiska resurser (tillståndskrav)", "Minst 9 000 euro för första fordonet + 5 000 euro per ytterligare (kontrollera årets kronkurs hos Transportstyrelsen)"],
             ["Yrkestrafiktillstånd", "Ansökningsavgift hos Transportstyrelsen – kontrollera aktuell avgift"],
             ["Prov för yrkeskunnande", "Provavgift hos Trafikverket – kontrollera aktuell avgift"],
@@ -236,7 +236,7 @@ const akeri: GuideContent = {
             ["Däck, service och reparationer", "Återkommande – budgetera per mil/körd sträcka"],
             ["Färdskrivare och vägavgifter", "Färdskrivare, eventuell trängselskatt och vägavgift (Eurovinjett)"],
           ],
-          source: "Bolagsverket (1 900 kr AB e-tjänst, 25 000 kr aktiekapital); Transportstyrelsen (ekonomiska resurser).",
+          source: "Bolagsverket (2 400 kr AB e-tjänst, 25 000 kr aktiekapital); Transportstyrelsen (ekonomiska resurser).",
         },
         {
           type: "callout",
@@ -266,7 +266,7 @@ const akeri: GuideContent = {
             },
             {
               title: "Registrera företaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras hos Bolagsverket, men du kan göra det för att skydda namnet.",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras hos Bolagsverket, men du kan göra det för att skydda namnet.",
             },
             {
               title: "Ansök om F-skatt och momsregistrering",
@@ -590,7 +590,7 @@ const akeri: GuideContent = {
           items: [
             "Valt bolagsform (enskild firma eller AB) utifrån ansvar, skatt och fordonslån",
             "Kontrollerat och valt företagsnamn hos Bolagsverket",
-            "Registrerat företaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat företaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt och momsregistrering hos Skatteverket",
             "Anmält verklig huvudman (AB)",
             "Öppnat företagskonto",

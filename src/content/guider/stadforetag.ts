@@ -17,7 +17,7 @@ import type { GuideContent } from "./types";
 //  • Moms städtjänster: 25 % (normalsats). Momsbefrielse möjlig vid omsättning
 //    ≤ 120 000 kr/år (fr.o.m. 1 jan 2025). (Skatteverket.)
 //  • Arbetsgivaravgift 31,42 % (2026), egenavgifter 28,97 %, aktiekapital privat
-//    AB 25 000 kr, AB-registrering 1 900 kr e-tjänst / 2 200 kr blankett.
+//    AB 25 000 kr, AB-registrering 2 400 kr e-tjänst / 2 700 kr blankett.
 //  • Städbranschen omfattas INTE av kravet på personalliggare (gäller bygg,
 //    fordonsservice, kropps-/skönhetsvård, livsmedels-/tobaksgrossist, restaurang,
 //    tvätteri). MEN städning på en byggarbetsplats omfattas av byggets
@@ -195,7 +195,7 @@ const stadforetag: GuideContent = {
           columns: ["Post", "Kommentar"],
           rows: [
             ["Aktiekapital (om AB)", "25 000 kr – sätts in på företagskonto, är ditt och kan användas i driften"],
-            ["Registrering AB hos Bolagsverket", "1 900 kr via e-tjänst på verksamt.se (2 200 kr med pappersblankett)"],
+            ["Registrering AB hos Bolagsverket", "2 400 kr via e-tjänst på verksamt.se (2 700 kr med pappersblankett)"],
             ["Registrering enskild firma", "Frivillig; namnskydd kostar ca 1 000 kr (kontrollera aktuell avgift hos Bolagsverket)"],
             ["F-skatt och momsregistrering", "Gratis hos Skatteverket"],
             ["Städutrustning och förbrukning", "Maskiner, redskap, kemikalier, mikrofiber, dunkar – relativt låg kostnad"],
@@ -204,7 +204,7 @@ const stadforetag: GuideContent = {
             ["Arbetskläder och skydd", "Kläder, handskar och skyddsutrustning"],
             ["Boknings-/administrationssystem", "System för schema, fakturering och RUT-hantering"],
           ],
-          source: "Bolagsverket (1 900 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
+          source: "Bolagsverket (2 400 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
         },
         {
           type: "callout",
@@ -230,7 +230,7 @@ const stadforetag: GuideContent = {
             },
             {
               title: "Registrera företaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr**. Du laddar upp stiftelseurkund, bolagsordning och bankintyg på att aktiekapitalet (25 000 kr) är insatt. Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
             },
             {
               title: "Ansök om F-skatt",
@@ -561,7 +561,7 @@ const stadforetag: GuideContent = {
           items: [
             "Valt bolagsform (enskild firma eller AB) utifrån ansvar, skatt och tillväxtplan",
             "Kontrollerat och valt företagsnamn hos Bolagsverket",
-            "Registrerat företaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat företaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt hos Skatteverket (gratis)",
             "Momsregistrerat företaget",
             "Anmält verklig huvudman (AB)",

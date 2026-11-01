@@ -39,14 +39,15 @@ const checklists = [
   },
 ];
 
-const faqItems = [
+const faqItems: { question: string; answer: string; source?: { label: string; url: string } }[] = [
   {
     question: "Vilken bolagsform ska jag välja?",
     answer: "Det beror på din situation. Enskild firma är enklast att starta och passar soloföretagare. Aktiebolag ger bättre skydd mot personligt ansvar och kan vara skattemässigt fördelaktigt vid högre vinster. Läs vår guide om enskild firma vs aktiebolag.",
   },
   {
     question: "Hur mycket kostar det att starta företag?",
-    answer: "Enskild firma kostar inget att registrera. Aktiebolag kräver 25 000 kr i aktiekapital plus registreringsavgift på ca 2 200 kr hos Bolagsverket. Utöver det tillkommer kostnader för eventuell utrustning och marknadsföring.",
+    answer: "Enskild firma kostar inget att registrera hos Skatteverket. Aktiebolag kräver 25 000 kr i aktiekapital plus en registreringsavgift hos Bolagsverket på 2 400 kr via e-tjänst (2 700 kr på blankett). Utöver det tillkommer kostnader för eventuell utrustning och marknadsföring.",
+    source: { label: "Bolagsverkets avgifter på verksamt.se (uppdaterad 2026-10-09)", url: "https://verksamt.se/en/about-verksamt-se/fees" },
   },
   {
     question: "Behöver jag en revisor?",
@@ -323,6 +324,18 @@ export default function HomePage() {
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.answer}
+                  {faq.source && (
+                    <p className="mt-2 text-sm">
+                      Källa:{" "}
+                      <a
+                        href={faq.source.url}
+                        className="text-accent hover:underline"
+                        rel="noopener"
+                      >
+                        {faq.source.label}
+                      </a>
+                    </p>
+                  )}
                 </div>
               </details>
             ))}

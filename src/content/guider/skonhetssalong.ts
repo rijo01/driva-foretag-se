@@ -4,7 +4,7 @@ import type { GuideContent } from "./types";
 // STARTGUIDE: SKÖNHETSSALONG
 //
 // YMYL – faktagranskad mot primärkälla. Verifierade uppgifter (juni 2026):
-//  • Aktiekapital privat AB 25 000 kr; AB-reg 1 900 kr e-tjänst / 2 200 kr
+//  • Aktiekapital privat AB 25 000 kr; AB-reg 2 400 kr e-tjänst / 2 700 kr
 //    blankett (Bolagsverket). Egenavgifter 28,97 % + schablonavdrag 25 %;
 //    arbetsgivaravgift 31,42 % (Skatteverket). Moms 25 %. Momsbefrielse högst
 //    120 000 kr/år (fr.o.m. 1 jan 2025).
@@ -202,7 +202,7 @@ const skonhetssalong: GuideContent = {
           columns: ["Post", "Kommentar"],
           rows: [
             ["Aktiekapital (om AB)", "25 000 kr – sätts in på företagskonto, är ditt och kan användas i driften"],
-            ["Registrering AB hos Bolagsverket", "1 900 kr via e-tjänst på verksamt.se (2 200 kr med pappersblankett)"],
+            ["Registrering AB hos Bolagsverket", "2 400 kr via e-tjänst på verksamt.se (2 700 kr med pappersblankett)"],
             ["F-skatt och momsregistrering", "Gratis hos Skatteverket"],
             ["Anmälan hygienlokal (vid behov)", "Kommunal avgift om din verksamhet är anmälningspliktig – kontrollera hos kommunen"],
             ["Lokal", "Hyra, deposition och anpassning (vatten, ventilation, behandlingsrum)"],
@@ -212,7 +212,7 @@ const skonhetssalong: GuideContent = {
             ["Boknings- och kassasystem", "Tidbokning, betalning och kvitton"],
             ["Försäkringar", "Företags-, egendoms- och behandlingsansvarsförsäkring (se kapitel 7)"],
           ],
-          source: "Bolagsverket (1 900 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
+          source: "Bolagsverket (2 400 kr AB e-tjänst, 25 000 kr aktiekapital); Skatteverket (F-skatt/moms gratis).",
         },
         {
           type: "callout",
@@ -242,7 +242,7 @@ const skonhetssalong: GuideContent = {
             },
             {
               title: "Registrera företaget hos Bolagsverket",
-              text: "AB registreras via e-tjänsten på **verksamt.se** för **1 900 kr** (stiftelseurkund, bolagsordning och bankintyg på aktiekapitalet 25 000 kr). Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
+              text: "AB registreras via e-tjänsten på **verksamt.se** för **2 400 kr** (stiftelseurkund, bolagsordning och bankintyg på aktiekapitalet 25 000 kr). Enskild firma behöver inte registreras, men du kan göra det för att skydda namnet.",
             },
             {
               title: "Ansök om F-skatt och momsregistrera dig",
@@ -530,7 +530,7 @@ const skonhetssalong: GuideContent = {
           items: [
             "Bestämt behandlingsutbud och klargjort vilka regler det utlöser",
             "Valt bolagsform (enskild firma eller AB) utifrån ansvar och skatt",
-            "Registrerat företaget (AB: 1 900 kr e-tjänst, aktiekapital 25 000 kr insatt)",
+            "Registrerat företaget (AB: 2 400 kr e-tjänst, aktiekapital 25 000 kr insatt)",
             "Ansökt om F-skatt och momsregistrerat företaget",
             "Anmält verklig huvudman (AB) och öppnat företagskonto",
           ],
