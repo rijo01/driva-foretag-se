@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import Link from "next/link";
 
 export default function BuyButton({
   slug,
@@ -11,8 +12,16 @@ export default function BuyButton({
 }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Uttryckligt samtycke krävs för att ångerrätten ska upphöra vid leverans av
+  // digitalt innehåll (lagen 2005:59, 2 kap. 11 § 11). Utan kryss – inget köp.
+  const [accepted, setAccepted] = useState(false);
+  const checkboxId = useId();
 
   async function handleClick() {
+    if (!accepted) {
+      setError("Kryssa i rutan om leverans och ångerrätt för att gå vidare.");
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -33,7 +42,27 @@ export default function BuyButton({
   }
 
   return (
-    <div>
+    <div className="max-w-md mx-auto text-left">
+      <div className="flex items-start gap-2.5 mb-4">
+        <input
+          id={checkboxId}
+          type="checkbox"
+          checked={accepted}
+          onChange={(e) => {
+            setAccepted(e.target.checked);
+            if (e.target.checked) setError(null);
+          }}
+          className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent"
+        />
+        <label htmlFor={checkboxId} className="text-sm text-gray-600 leading-relaxed">
+          Jag godkänner{" "}
+          <Link href="/kopvillkor" className="text-accent underline">
+            köpvillkoren
+          </Link>{" "}
+          och att guiden levereras direkt efter betalningen. Jag förstår att
+          ångerrätten upphör när leveransen har påbörjats.
+        </label>
+      </div>
       <button
         onClick={handleClick}
         disabled={loading}
@@ -42,6 +71,13 @@ export default function BuyButton({
         {loading ? "Öppnar betalning…" : `Köp guiden – ${price} kr`}
       </button>
       {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+      <p className="mt-3 text-xs text-gray-500">
+        Betalningen sköts av Stripe. Läs hur vi hanterar dina uppgifter i vår{" "}
+        <Link href="/integritetspolicy" className="underline">
+          integritetspolicy
+        </Link>
+        .
+      </p>
     </div>
   );
 }

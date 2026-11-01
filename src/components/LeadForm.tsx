@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 
@@ -340,7 +341,11 @@ export default function LeadForm({
           />
           <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
             Jag samtycker till att mina uppgifter används för att kontakta mig om
-            min förfrågan. *
+            min förfrågan enligt vår{" "}
+            <Link href="/integritetspolicy" className="text-accent underline">
+              integritetspolicy
+            </Link>
+            . *
           </label>
         </div>
       )}
@@ -360,7 +365,11 @@ export default function LeadForm({
       <p className="text-xs text-gray-500 text-center leading-relaxed">
         Formuläret skickas som e-post till oss via tjänsten Web3Forms – vi sparar
         inga uppgifter i någon databas. Vi delar aldrig dina uppgifter med tredje
-        part utan ditt samtycke.
+        part utan ditt samtycke. Läs mer i vår{" "}
+        <Link href="/integritetspolicy" className="underline">
+          integritetspolicy
+        </Link>
+        .
       </p>
     </form>
   );
